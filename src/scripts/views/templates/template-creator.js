@@ -1,5 +1,17 @@
 import CONFIG from '../../globals/config';
 
+const createSindoArtichel = (data) => `
+    <div class="post-box">
+        <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
+        <h2 class="category">SINDO News</h2>
+        <a href="${data.link}" class="post-title">
+        ${data.title}
+        </a>
+        <span class="post-date">29 Mei 2023</span>
+        <p class="post-description">${data.description}</p>
+    </div>
+`;
+
 const createDetailArtichel = (data) => `
 <section class="post-header">
         <div class="header-content post-container">
@@ -28,4 +40,8 @@ const createTemplateArtichel = (data) => `
         </div>
 `;
 
-export { createDetailArtichel, createTemplateArtichel };
+export {
+  createDetailArtichel,
+  createTemplateArtichel,
+  createSindoArtichel,
+};
