@@ -2,7 +2,7 @@
 
 @media screen and (min-width: 455px) {
     .about-content {
-      padding: 16px 16px;
+      padding: 16px 47px;
     }
   
     .about-title {
@@ -21,17 +21,17 @@
     }
 }
 
-@media  screen and (min-width: 769px) {
+/* @media  screen and (min-width: 769px) {
     .artikel-space {
         padding-top: 5rem;
     }
-}
+} */
 
-@media screen and (min-width: 835px) {
+/* @media screen and (min-width: 835px) {
     .artikel-space {
         padding-top: 6rem;
     }
-}
+} */
 
 @media screen and (min-width: 900px) {
     .about-articel{

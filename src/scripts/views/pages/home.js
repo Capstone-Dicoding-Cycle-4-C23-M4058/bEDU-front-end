@@ -24,8 +24,6 @@ const showCard = {
                 terkait pendidikan. Tujuan kami adalah memberikan pemahaman
                 yang mendalam tentang berbagai topik Edukasi serta membantu
                 anda dalam memperoleh pengetahuan dan keterampilan baru.</p>
-              <p class="about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsum obcaecati numquam saepe fuga iusto qui consequuntur sed quisquam eum facere in tempora rerum cum aut sequi deleniti, deserunt eaque architecto sunt similique, inventore itaque rem accusamus. Consequatur sunt corporis ratione fugit pariatur dolore quia?</p>  
-              <button class="about-button">Read More</button>
             </div>
           </article>
     </section>

@@ -1,4 +1,4 @@
-import showCard from '../views/pages/card';
+import showCard from '../views/pages/home';
 import Detail from '../views/pages/detail';
 import Favorite from '../views/pages/favorite';
 import showNews from '../views/pages/news';
