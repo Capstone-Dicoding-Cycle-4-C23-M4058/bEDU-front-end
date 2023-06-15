@@ -26,7 +26,7 @@ function scrollValue() {
   const btn3 = document.getElementById('nav-btn3');
   const scroll = window.scrollY;
 
-  if (scroll < 400) {
+  if (scroll < 350) {
     scrollImage.setAttribute('src', './logo/Logo Bedu v2.png');
     navbar.classList.remove('BgColour');
     btn.style.color = 'var(--bg-color)'; btn2.style.color = 'var(--bg-color)'; btn3.style.color = 'var(--bg-color)';

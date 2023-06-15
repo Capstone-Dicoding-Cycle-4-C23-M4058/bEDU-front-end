@@ -1,5 +1,3 @@
-import CONFIG from '../../globals/config';
-
 const createSindoArtichel = (data) => {
   const jsonString = `{"pubDate": "${data.pubDate}"}`;
   const jsonObject = JSON.parse(jsonString);
@@ -28,13 +26,14 @@ const createDetailArtichel = (data) => `
             <!-- Title -->
             <h1 class="header-title">${data.title}</h1>
             <!-- Post Image -->
-            <img src="${CONFIG.BASE_IMAGE_URL + data.thumbnail}" alt="${data.title}" class="header-img">
+            <img src="${data.thumbnail}" alt="${data.title}" class="header-img">
         </div>
-    </section>
+</section>
+<section></section>
     <!-- Posts -->
-    <section class="post-content post-container">
-        <p class="post-text">${data.abstract}</p>
-        <p class="post-text">${data.description}</p>
+    <section class="post-content post-container ">
+      <p class="post-text">${data.abstract}</p>
+      <p class="post-text">${data.description}</p>
     </section>
 `;
 
@@ -50,7 +49,7 @@ const createTemplateArtichel = (data) => {
 
   return `
       <div class="post-box">
-        <img src="${CONFIG.BASE_IMAGE_URL + data.thumbnail}" alt="${data.title}" class="post-img">
+        <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
         <h2 class="category">${data.label}</h2>
         <a href="/#/article/${data.article_id}" class="post-title">
           ${data.title}
@@ -61,8 +60,22 @@ const createTemplateArtichel = (data) => {
     `;
 };
 
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this resto" id="likeButton" class="like">
+  <i class='bx bx-bookmark' ></i>
+  </button>
+`;
+
+const createUnlikeButtonTemplate = () => `
+  <button aria-label="unlike this resto" id="likeButton" class="like">
+  <i class='bx bxs-bookmark' ></i>
+  </button>
+`;
+
 export {
   createDetailArtichel,
   createTemplateArtichel,
   createSindoArtichel,
+  createLikeButtonTemplate,
+  createUnlikeButtonTemplate,
 };

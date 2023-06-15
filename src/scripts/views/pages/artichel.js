@@ -1,7 +1,7 @@
-import NewslDbSource from '../../data/newsIdb-source';
-import { createSindoArtichel } from '../templates/template-creator';
+import ArtichelDbSource from '../../data/articheldb-source';
+import { createTemplateArtichel } from '../templates/template-creator';
 
-const showNews = {
+const Artichel = {
   async render() {
     return `
     <!-- Home -->
@@ -13,12 +13,12 @@ const showNews = {
             </span>
         </div>
     </section>
-    <section class="select-tab">
+    <section class="select-tab render">
     <a class="tab-btn" href="/#/news"><i class='bx bxs-news' ></i><p>Berita</p></a>
     <a class="tab-btn" href="/#/school"><i class='bx bxs-graduation' ></i><p>Sekolah</p></a>
     <a class="tab-btn" href="/#/articles"><i class='bx bxs-book-reader' ></i><p>Artikel</p></a>
       </section>
-        <p class="artikel-space">Berita Edukasi Terkini dan Terbaru Hari ini - SINDOnews</p>
+        <p class="artikel-space">Artikel Pilihan Kami - Bedah Edukasi</p>
     <!-- Posts -->
     <section class="post container">
        
@@ -27,13 +27,13 @@ const showNews = {
   },
 
   async afterRender() {
-    const artichels = await NewslDbSource.showCardNews();
-    const Container = document.querySelector('.post');
+    const artichels = await ArtichelDbSource.showCardArtichel();
+    const artichelsContainer = document.querySelector('.post');
     console.log(artichels);
     artichels.forEach((data) => {
-      Container.innerHTML += createSindoArtichel(data);
+      artichelsContainer.innerHTML += createTemplateArtichel(data);
     });
   },
 };
 
-export default showNews;
+export default Artichel;
