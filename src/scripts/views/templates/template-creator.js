@@ -54,11 +54,13 @@ const createTemplateAdminArticle = data => {
       <div class="post-box">
         <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
         <h2 class="category">Pendidikan</h2>
-        <a href="/#/article/${data.article_id}" class="post-title">
+        <a href="/#/edit_article/${data.article_id}" class="post-title">
           ${data.title}
         </a>
         <span class="post-date">${tanggalFormat}</span>
         <p class="post-description">${data.abstract}</p>
+        <button type="button" id="deleteArticle" class="btn btn-danger btn-block mb-4" data-id="${data.article_id}">Delete Article</button>
+        <button type="button" id="editArticle" class="btn btn-danger btn-block mb-4" data-id="${data.article_id}">Edit Article</button>
       </div>
     `;
 };
@@ -162,7 +164,50 @@ const loginAdminForm = () => `
     </div>
 `;
 
+const updateArticle = data => `
+<div class="form-container">
+    <div class="form-wrapper">
+    <form id="UpdateArticleForm" enctype="multipart/form-data">
+        <div class="form-outline mb-4">
+            <input type="text" id="title" class="form-control" value="${data.title}"/>
+            <label class="form-label" for="title">Judul Artikel</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" id="abstract" class="form-control" value="${data.abstract}"/>
+            <label class="form-label" for="abstract">Abstract</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" id="description" class="form-control" value="${data.description}"/>
+            <label class="form-label" for="description">Isi Artikel</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" id="label" class="form-control" value="${data.label}"/>
+            <label class="form-label" for="label">Label</label>
+        </div>
+
+        <div class="form-outline mb-4">
+        <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
+            <input type="file" id="thumbnail" class="form-control" />
+            <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
+        </div>
+
+        <div class="form-outline mb-4">
+        <img src="${data.image}" alt="${data.title}" class="post-img">
+            <input type="file" id="image" class="form-control" />
+            <label class="form-label" for="image">Image Tambahan Artikel</label>
+        </div>
+
+        <button type="button" id="UpdateArticle" class="btn btn-primary btn-block mb-4">Update Article</button>
+    </form>
+    </div>
+    </div>
+`;
+
 export {
+    updateArticle,
     RegisterAdminForm,
     loginAdminForm,
     createArticleForm,

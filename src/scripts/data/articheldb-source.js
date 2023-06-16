@@ -19,18 +19,53 @@ class ArtichelDbSource {
     return responseJson.data;
   }
 
-  static async deleteArticle(articleId) {
-    const response = await fetch(API_ENDPOINT.DELETE_ARTICLE(articleId), {
-      method: 'DELETE',
-    });
-    const responseJson = await response.json();
-    return responseJson;
-  }
-
   static async createArticle(formData, token) {
     try {
       const response = await fetch(API_ENDPOINT.CREATE_ARTICLE, {
         method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async deleteArticle(articleId, token) {
+    try {
+      const response = await fetch(API_ENDPOINT.DELETE_ARTICLE(articleId), {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async updateArticle(formData, articleId, token) {
+    try {
+      const response = await fetch(API_ENDPOINT.EDIT_ARTICLE(articleId), {
+        method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
         },

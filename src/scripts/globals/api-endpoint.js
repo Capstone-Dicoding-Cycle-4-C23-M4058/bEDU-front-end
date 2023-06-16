@@ -8,8 +8,8 @@ const API_ENDPOINT = {
   LOGIN_ADMIN: `${CONFIG.BASE_URL}admin/login`,
   REGISTER_ADMIN: `${CONFIG.BASE_URL}admin/register`,
   CREATE_ARTICLE: `${CONFIG.BASE_URL}admin/article`,
-  DELETE_ARTICLE: id => `${CONFIG.BASE_URL}article/${id}`,
-  EDIT_ARTICLE: id => `${CONFIG.BASE_URL}article/${id}`,
+  DELETE_ARTICLE: id => `${CONFIG.BASE_URL}admin/article/${id}`,
+  EDIT_ARTICLE: id => `${CONFIG.BASE_URL}admin/article/${id}`,
 };
 
 export default API_ENDPOINT;
