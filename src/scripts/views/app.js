@@ -23,7 +23,7 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url] || routes['/admin/create_article'] || routes['/admin/login']; // Menggunakan halaman default jika rute tidak ditemukan
+    const page = routes[url]; // Menggunakan halaman default jika rute tidak ditemukan
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
