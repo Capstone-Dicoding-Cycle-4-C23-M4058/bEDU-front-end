@@ -1,6 +1,6 @@
 import CONFIG from '../../globals/config';
 
-const createSindoArtichel = (data) => `
+const createSindoArtichel = data => `
     <div class="post-box">
         <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
         <h2 class="category">SINDO News</h2>
@@ -12,13 +12,13 @@ const createSindoArtichel = (data) => `
     </div>
 `;
 
-const createDetailArtichel = (data) => `
+const createDetailArtichel = data => `
 <section class="post-header">
         <div class="header-content post-container">
             <!-- Title -->
             <h1 class="header-title">${data.title}</h1>
             <!-- Post Image -->
-            <img src="${CONFIG.BASE_IMAGE_URL + data.thumbnail}" alt="${data.title}" class="header-img">
+            <img src="${data.thumbnail}" alt="${data.title}" class="header-img">
         </div>
     </section>
     <!-- Posts -->
@@ -28,9 +28,9 @@ const createDetailArtichel = (data) => `
     </section>
 `;
 
-const createTemplateArtichel = (data) => `
+const createTemplateArtichel = data => `
         <div class="post-box">
-            <img src="${CONFIG.BASE_IMAGE_URL + data.thumbnail}" alt="${data.title}" class="post-img">
+            <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
             <h2 class="category">Pendidikan</h2>
             <a href="/#/article/${data.article_id}" class="post-title">
             ${data.title}
@@ -40,8 +40,95 @@ const createTemplateArtichel = (data) => `
         </div>
 `;
 
+const createTemplateAdminArticle = data => {
+    const jsonString = `{"created_at": "${data.created_at}"}`;
+    const jsonObject = JSON.parse(jsonString);
+    const createdAt = jsonObject.created_at;
+    const tanggal = createdAt.substring(0, 10);
+    const tanggalAwal = tanggal;
+    const Newtanggal = new Date(tanggalAwal);
+    const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
+
+    return `
+      <div class="post-box">
+        <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
+        <h2 class="category">Pendidikan</h2>
+        <a href="/#/article/${data.article_id}" class="post-title">
+          ${data.title}
+        </a>
+        <span class="post-date">${tanggalFormat}</span>
+        <p class="post-description">${data.abstract}</p>
+      </div>
+    `;
+};
+
+const createArticleForm = () => `
+    <div class="form-container">
+    <div class="form-wrapper">
+    <form id="createArticleForm" enctype="multipart/form-data">
+        <div class="form-outline mb-4">
+            <input type="text" id="title" class="form-control" />
+            <label class="form-label" for="title">Judul Artikel</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" id="abstract" class="form-control" />
+            <label class="form-label" for="abstract">Abstract</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" id="description" class="form-control" />
+            <label class="form-label" for="description">Isi Artikel</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" id="label" class="form-control" />
+            <label class="form-label" for="label">Label</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="file" id="thumbnail" class="form-control" />
+            <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="file" id="image" class="form-control" />
+            <label class="form-label" for="image">Image Tambahan Artikel</label>
+        </div>
+
+        <button type="button" id="CreateArticle" class="btn btn-primary btn-block mb-4">Create Article</button>
+    </form>
+    </div>
+    </div>
+`;
+
+const loginAdminForm = () => `
+    <div class="form-container">
+        <div class="form-wrapper">
+            <form id="loginAdminForm" enctype="multipart/form-data">
+                <div class="form-outline mb-4">
+                    <input type="email" id="username" class="form-control" />
+                    <label class="form-label" for="emailInput">Username</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input type="password" id="passwordInput" class="form-control" />
+                    <label class="form-label" for="passwordInput">Password</label>
+                </div>
+
+                <button type="button" id="signInBtn" class="btn btn-primary btn-block mb-4">Sign in</button>
+            </form>
+        </div>
+    </div>
+`;
+
 export {
-  createDetailArtichel,
-  createTemplateArtichel,
-  createSindoArtichel,
+    loginAdminForm,
+    createArticleForm,
+    createDetailArtichel,
+    createTemplateArtichel,
+    createSindoArtichel,
+    createTemplateAdminArticle,
 };

@@ -1,0 +1,99 @@
+<!-- login.html -->
+<form id="loginForm" enctype="multipart/form-data">
+    <!-- Nama input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="title" class="form-control" />
+        <label class="form-label" for="title">Judul Artikel</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="abstract" class="form-control" />
+        <label class="form-label" for="abstract">Abstract</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="description" class="form-control" />
+        <label class="form-label" for="description">Isi Artikel</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="label" class="form-control" />
+        <label class="form-label" for="label">Label</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="file" id="thumbnail" class="form-control" />
+        <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="file" id="image" class="form-control" />
+        <label class="form-label" for="image">Image Tambahan Artikel</label>
+    </div>
+
+    <button type="button" id="CreateArticle" class="btn btn-primary btn-block mb-4">Create Article</button>
+</form>
+
+<script>
+    document.getElementById('CreateArticle').addEventListener('click', function () {
+        var title = document.getElementById('title').value;
+        var abstract = document.getElementById('abstract').value;
+        var description = document.getElementById('description').value;
+        var label = document.getElementById('label').value;
+        var thumbnail = document.getElementById('thumbnail').files[0];
+        var image = document.getElementById('image').files[0];
+
+        var formData = new FormData();
+        formData.append('title', title);
+        formData.append('abstract', abstract);
+        formData.append('description', description);
+        formData.append('label', label);
+        formData.append('thumbnail', thumbnail);
+        formData.append('image', image);
+
+        const bEDUCookie = getCookieValue('bEDUCookie');
+        console.log(bEDUCookie);
+
+        if (bEDUCookie) {
+            // Make the API request with the token in the request header
+            fetch('http://capstone.keyzex.com:8080/api/v1/admin/article', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + bEDUCookie
+                    },
+                    body: formData
+                })
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.json().then(function (data) {
+                            throw new Error(data.message);
+                        });
+                    }
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                })
+                .catch(function (error) {
+                    console.error('Error:', error.message);
+                });
+        } else {
+            console.error('Cookie "bEDUCookie" not found');
+        }
+    });
+
+    function getCookieValue(cookieName) {
+        const cookieString = document.cookie;
+        const cookies = cookieString.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(cookieName + '=')) {
+                return cookie.substring(cookieName.length + 1);
+            }
+        }
+        return null;
+    }
+</script>
