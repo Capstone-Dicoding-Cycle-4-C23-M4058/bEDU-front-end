@@ -37,7 +37,7 @@ const Detail = {
       },
     });
 
-    const recomend = await ArtichelDbSource.showCardArtichel();
+    const recomend = await ArtichelDbSource.showCardArtichel().then((data) => data.slice(0, 3));
     const artichelsContainer = document.querySelector('.post');
 
     // Fungsi untuk mengacak urutan elemen dalam array

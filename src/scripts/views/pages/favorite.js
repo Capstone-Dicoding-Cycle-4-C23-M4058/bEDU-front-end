@@ -27,8 +27,8 @@ const Favorite = {
     if (List.length < 1) {
       empty.innerHTML += `
       <div id"message">
-        <h2 tabindex="0" class="resto-item-not-found">Article Not Found</h2>
-        <p> try to bookmark some article</p>
+        <h2 tabindex="0" class="resto-item-not-found">Belum ada artikel</h2>
+        <p>coba anda tandai dulu artikel yang telah di baca</p>
       </div>
       `;
 

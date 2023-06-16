@@ -15,7 +15,7 @@ const showCard = {
     <section class="about" id="about">
     <article class="about-articel" id="tokoh">
         <figure class="about-figure">
-          <img src="./about img/tan-malaka.png" alt="Bedu Fact Sheet">
+          <img src="/img/tan-malaka.png" alt="Bedu Fact Sheet">
           <figcaption>Tan Malaka.</figcaption>
         </figure>
         <div class="about-content">
@@ -32,14 +32,13 @@ const showCard = {
               <p class="about-description">“Apapun yang dilakukan oleh seseorang itu, hendaknya dapat bermanfaat bagi dirinya sendiri, bermanfaat bagi bangsanya, dan bermanfaat bagi manusia di dunia pada umumnya.”</p>
             </div>
             <figure class="about-figure">
-              <img src="./about img/Ki-Hajar-Dewantara.png" alt="Bedu Fact Sheet">
+              <img src="/img/Ki-Hajar-Dewantara.png" alt="Bedu Fact Sheet">
               <figcaption>Ki Hadjar Dewantara.</figcaption>
             </figure>
           </article>
     </section>
     <section class="select-tab" id="select-tab">
           <a class="tab-btn" href="/#/news"><i class='bx bxs-news' ></i><p>Berita</p></a>
-          <a class="tab-btn" href="/#/school"><i class='bx bxs-graduation' ></i><p>Sekolah</p></a>
           <a class="tab-btn" href="/#/articles"><i class='bx bxs-book-reader' ></i><p>Artikel</p></a>
       </section>
         <p class="artikel-space">Artikel Pilihan</p>
@@ -51,9 +50,8 @@ const showCard = {
   },
 
   async afterRender() {
-    const artichels = await ArtichelDbSource.showCardArtichel();
+    const artichels = await ArtichelDbSource.showCardArtichel().then((data) => data.slice(0, 6));
     const artichelsContainer = document.querySelector('.post');
-    console.log(artichels);
     artichels.forEach((data) => {
       artichelsContainer.innerHTML += createTemplateArtichel(data);
     });

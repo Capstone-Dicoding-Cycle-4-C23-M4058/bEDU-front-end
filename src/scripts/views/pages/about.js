@@ -9,7 +9,7 @@ const About = {
     <section class="about" id="about">
     <article class="about-articel">
         <figure class="about-figure">
-          <img src="./about img/Icon Bedu .png" alt="Bedu Fact Sheet">
+          <img src="/img/Icon Bedu .png" alt="Bedu Fact Sheet">
           <figcaption>Logo Bedah Edukasi Juni 2023.</figcaption>
         </figure>
         <div class="about-content">
@@ -30,11 +30,11 @@ const About = {
           <div class="card">
            <div class="content">
              <div class="img">
-              <img src="./about img/profile1.png" alt="">
+              <img src="/img/profile1.png" alt="">
              </div>
              <div class="details">
                <div class="name">Jaka Ashputra</div>
-               <div class="job">Web Devloper</div>
+               <div class="job">Front-End</div>
              </div>
              <div class="media-icons">
                <a href="https://www.instagram.com/putra.ash/"><i class='bx bxl-instagram'></i></a>
@@ -50,7 +50,7 @@ const About = {
              </div>
              <div class="details">
                <div class="name">Rahadina Budiman S.</div>
-               <div class="job">Web Devloper</div>
+               <div class="job">Back-End</div>
              </div>
              <div class="media-icons">
                 <a href="#"><i class='bx bxl-instagram'></i></a>
@@ -66,7 +66,7 @@ const About = {
               </div>
               <div class="details">
                 <div class="name">AlMalik Ashraf</div>
-                <div class="job">Web Devloper</div>
+                <div class="job">UI</div>
               </div>
               <div class="media-icons">
                 <a href="#"><i class='bx bxl-instagram'></i></a>
@@ -82,7 +82,7 @@ const About = {
              </div>
              <div class="details">
                <div class="name">Ferdian Darma Putra</div>
-               <div class="job">Web Devloper</div>
+               <div class="job">UX</div>
              </div>
              <div class="media-icons">
                 <a href="#"><i class='bx bxl-instagram'></i></a>

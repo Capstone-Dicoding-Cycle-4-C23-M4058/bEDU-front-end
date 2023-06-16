@@ -15,7 +15,6 @@ const Artichel = {
     </section>
     <section class="select-tab render">
     <a class="tab-btn" href="/#/news"><i class='bx bxs-news' ></i><p>Berita</p></a>
-    <a class="tab-btn" href="/#/school"><i class='bx bxs-graduation' ></i><p>Sekolah</p></a>
     <a class="tab-btn" href="/#/articles"><i class='bx bxs-book-reader' ></i><p>Artikel</p></a>
       </section>
         <p class="artikel-space">Artikel Pilihan Kami - Bedah Edukasi</p>
