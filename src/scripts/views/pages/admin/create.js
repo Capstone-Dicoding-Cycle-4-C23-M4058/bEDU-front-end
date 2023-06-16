@@ -1,5 +1,5 @@
-import ArtichelDbSource from '../../data/articheldb-source';
-import { createArticleForm } from '../templates/template-creator';
+import ArtichelDbSource from '../../../data/articheldb-source';
+import { createArticleForm } from '../../templates/template-creator';
 
 const CreateArticle = {
   async render() {

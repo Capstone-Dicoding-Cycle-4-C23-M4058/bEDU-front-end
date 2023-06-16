@@ -1,5 +1,5 @@
-import ArtichelDbSource from '../../data/articheldb-source';
-import { createTemplateAdminArticle } from '../templates/template-creator';
+import ArtichelDbSource from '../../../data/articheldb-source';
+import { createTemplateAdminArticle } from '../../templates/template-creator';
 
 const AdminPage = {
   async render() {

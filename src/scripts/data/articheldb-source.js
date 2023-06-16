@@ -77,6 +77,38 @@ class ArtichelDbSource {
       throw new Error(error.message);
     }
   }
+
+  static async registerAdmin(nama, username, email, password, passwordConfirm) {
+    try {
+      const data = {
+        nama,
+        username,
+        email,
+        password,
+        passwordConfirm,
+      };
+
+      console.log('Ini data', data);
+
+      const response = await fetch(API_ENDPOINT.REGISTER_ADMIN, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
 }
 
 export default ArtichelDbSource;

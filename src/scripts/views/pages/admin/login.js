@@ -1,5 +1,5 @@
-import ArtichelDbSource from '../../data/articheldb-source';
-import { loginAdminForm } from '../templates/template-creator';
+import ArtichelDbSource from '../../../data/articheldb-source';
+import { loginAdminForm } from '../../templates/template-creator';
 
 const LoginForm = {
   async render() {

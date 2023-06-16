@@ -64,9 +64,9 @@ const createTemplateAdminArticle = data => {
 };
 
 const createArticleForm = () => `
-    <div class="form-container">
+   <div class="form-container">
     <div class="form-wrapper">
-    <form id="createArticleForm" enctype="multipart/form-data">
+    <form id="CreateArticleForm" enctype="multipart/form-data">
         <div class="form-outline mb-4">
             <input type="text" id="title" class="form-control" />
             <label class="form-label" for="title">Judul Artikel</label>
@@ -103,6 +103,44 @@ const createArticleForm = () => `
     </div>
 `;
 
+const RegisterAdminForm = () => `
+<div class="form-container">
+    <div class="form-wrapper">
+    <form id="RegisterAdminForm" enctype="multipart/form-data">
+    <!-- Nama input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="namaLengkap" class="form-control" />
+        <label class="form-label" for="namaLengkap">Nama Lengkap</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="username" class="form-control" />
+        <label class="form-label" for="emailInput">Username</label>
+    </div>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="emailInput" class="form-control" />
+        <label class="form-label" for="emailInput">Email address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" id="passwordInput" class="form-control" />
+        <label class="form-label" for="passwordInput">Password</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="password" id="passwordConfirm" class="form-control" />
+        <label class="form-label" for="passwordInput">Password Confirm</label>
+    </div>
+
+    <button type="button" id="RegisterAdminButton" class="btn btn-primary btn-block mb-4">Register Admin</button>
+    </form>
+    </div>
+    </div>
+`;
+
 const loginAdminForm = () => `
     <div class="form-container">
         <div class="form-wrapper">
@@ -125,6 +163,7 @@ const loginAdminForm = () => `
 `;
 
 export {
+    RegisterAdminForm,
     loginAdminForm,
     createArticleForm,
     createDetailArtichel,
