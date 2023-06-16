@@ -39,7 +39,7 @@ const showCard = {
     const artichels = await ArtichelDbSource.showCardArtichel();
     const artichelsContainer = document.querySelector('.post');
     console.log(artichels);
-    artichels.forEach((data) => {
+    artichels.forEach(data => {
       artichelsContainer.innerHTML += createTemplateArtichel(data);
     });
   },
