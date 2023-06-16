@@ -18,12 +18,12 @@ class App {
       content: this._content,
     });
 
-    // kita bisa menginisiasikan komponen lain bila ada
+    // Kita bisa menginisialisasi komponen lain jika diperlukan
   }
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
+    const page = routes[url]; // Menggunakan halaman default jika rute tidak ditemukan
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
