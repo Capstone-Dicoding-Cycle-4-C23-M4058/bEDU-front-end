@@ -62,6 +62,30 @@ class ArtichelDbSource {
     }
   }
 
+  static async logoutAdmin(token) {
+    try {
+      const response = await fetch(API_ENDPOINT.LOGOUT_ADMIN, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      // Menghapus cookie bEDUCookie
+      document.cookie = 'bEDUCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   static async updateArticle(formData, articleId, token) {
     try {
       const response = await fetch(API_ENDPOINT.EDIT_ARTICLE(articleId), {
@@ -140,6 +164,67 @@ class ArtichelDbSource {
 
       const responseJson = await response.json();
       return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async registerUser(nama, username, email, password, passwordConfirm) {
+    try {
+      const data = {
+        nama,
+        username,
+        email,
+        password,
+        passwordConfirm,
+      };
+
+      console.log('Ini data', data);
+
+      const response = await fetch(API_ENDPOINT.REGISTER_USER, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async loginUser(username, password) {
+    try {
+      const data = {
+        username,
+        password,
+      };
+
+      const response = await fetch(API_ENDPOINT.LOGIN_USER, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      const responseData = await response.clone().json();
+      document.cookie = `bEDUCookie=${responseData.data.token}; path=/`;
+      console.log(responseData.message);
+      return responseData;
     } catch (error) {
       throw new Error(error.message);
     }

@@ -34,7 +34,7 @@ const About = {
              </div>
              <div class="details">
                <div class="name">Jaka Ashputra</div>
-               <div class="job">Front-End</div>
+               <div class="job">Frontend Developer</div>
              </div>
              <div class="media-icons">
                <a href="https://www.instagram.com/putra.ash/"><i class='bx bxl-instagram'></i></a>
@@ -46,16 +46,16 @@ const About = {
           <div class="card">
            <div class="content">
              <div class="img">
-              <img src="images/img2.jpg" alt="">
+             <img src="/img/profile2.jpg" alt="">
              </div>
              <div class="details">
-               <div class="name">Rahadina Budiman S.</div>
-               <div class="job">Back-End</div>
+               <div class="name">Rahadina Budiman Sundara</div>
+               <div class="job">Backend Developer</div>
              </div>
              <div class="media-icons">
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
+              <a href="https://www.instagram.com/rahadinabudiman/"><i class='bx bxl-instagram'></i></a>
+              <a href="https://www.linkedin.com/in/rahadinabudiman/"><i class='bx bxl-linkedin' ></i></a>
+              <a href="https://github.com/rahadinabudiman"><i class='bx bxl-github'></i></a>
              </div>
            </div>
           </div>

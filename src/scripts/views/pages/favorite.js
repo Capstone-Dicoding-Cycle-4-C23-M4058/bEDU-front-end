@@ -35,7 +35,7 @@ const Favorite = {
       Container.innerHTML = '';
     } else if (List.length >= 1) {
       const articleContainer = document.querySelector('.post');
-      List.forEach((data) => {
+      List.forEach(data => {
         articleContainer.innerHTML
         += createTemplateArtichel(data);
       });
