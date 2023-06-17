@@ -127,7 +127,7 @@ header {
     min-height: 440px;
     /* background: var(--container-color); */
     background:linear-gradient(var(--container-color), rgba(12, 23, 172, 0.603)), 
-    url("/dist/img/hero.png") no-repeat center / cover;
+    url("/img/hero.png") no-repeat center / cover;
     display: grid;
     justify-content: center;
     align-items: center;

@@ -30,7 +30,7 @@ const About = {
           <div class="card">
            <div class="content">
              <div class="img">
-              <img src="/img/profile1.png" alt="">
+              <img src="/img/profile1.png" alt="Jaka Ashputra">
              </div>
              <div class="details">
                <div class="name">Jaka Ashputra</div>
@@ -46,10 +46,10 @@ const About = {
           <div class="card">
            <div class="content">
              <div class="img">
-             <img src="/img/profile2.jpg" alt="">
+              <img src="img/profile2.jpg" alt="">
              </div>
              <div class="details">
-               <div class="name">Rahadina Budiman Sundara</div>
+               <div class="name">Rahadina Budiman S.</div>
                <div class="job">Backend Developer</div>
              </div>
              <div class="media-icons">
@@ -62,7 +62,7 @@ const About = {
           <div class="card">
             <div class="content">
               <div class="img">
-               <img src="images/img2.jpg" alt="">
+               <img src="/img/profile1.png" alt="AlMalik Ashraf">
               </div>
               <div class="details">
                 <div class="name">AlMalik Ashraf</div>
@@ -78,7 +78,7 @@ const About = {
           <div class="card">
            <div class="content">
              <div class="img">
-              <img src="images/img3.jpg" alt="">
+              <img src="/img/profile2.png" alt="">
              </div>
              <div class="details">
                <div class="name">Ferdian Darma Putra</div>

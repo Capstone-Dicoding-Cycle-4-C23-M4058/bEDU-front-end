@@ -26,6 +26,8 @@ const showNews = {
   },
 
   async afterRender() {
+    const nav = document.getElementById('bar-nav');
+    nav.style.display = 'flex';
     const artichels = await NewslDbSource.showCardNews();
     const Container = document.querySelector('.post');
     console.log(artichels);
