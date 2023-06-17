@@ -62,7 +62,7 @@ const EditArticle = {
             bEDUCookie);
 
             console.log(response);
-
+            window.location.href = '/#/admin';
           // Tampilkan pesan sukses atau alihkan pengguna ke halaman lain
           // sesuai dengan kebutuhan aplikasi Anda
         } else {

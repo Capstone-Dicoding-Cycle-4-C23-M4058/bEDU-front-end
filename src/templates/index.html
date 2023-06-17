@@ -54,17 +54,30 @@
                                 }
                             }
 
-                            const bEDUCookie = getCookieValue('bEDUCookie');
-                            const parsedToken = parseJwtPayload(bEDUCookie);
-                            const navBtn = document.getElementById("nav-btn4");
+                            function updateNavBtn() {
+                                const bEDUCookie = getCookieValue('bEDUCookie');
+                                const parsedToken = parseJwtPayload(bEDUCookie);
+                                const navBtn = document.getElementById("nav-btn4");
 
-                            if (!parsedToken || parsedToken.role !== 'User') {
-                                navBtn.innerHTML = "Login";
-                                navBtn.href = "/#/user_login";
-                            } else {
-                                navBtn.innerHTML = "Logout";
-                                navBtn.href = "/#/logout";
+                                const currentRoute = window.location.hash.substring(2);
+                                if (!parsedToken || parsedToken.role === 'Admin') {
+                                    if (currentRoute === 'admin') {
+                                        navBtn.innerHTML = "Logout";
+                                        navBtn.href = "/#/logout_admin";
+                                    } else {
+                                        navBtn.innerHTML = "Login";
+                                        navBtn.href = "/#/login";
+                                    }
+                                } else {
+                                    navBtn.innerHTML = "Logout";
+                                    navBtn.href = "/#/logout";
+                                }
                             }
+
+                            updateNavBtn(); // Panggil fungsi saat halaman dimuat
+
+                            // Tambahkan event listener untuk menangani perubahan URL saat halaman diperbarui
+                            window.addEventListener("hashchange", updateNavBtn);
                         </script>
                     </li>
                 </ul>
@@ -85,7 +98,7 @@
         <p>&#169; Bedah Edukasi All Right Reserved</p>
         <div class="social">
             <a href=""><i class='bx bxl-linkedin'></i></a>
-            <a href=""><i class='bx bxl-github'></i></a>
+            <a href="https://github.com/Capstone-Dicoding-Cycle-4-C23-M4058"><i class='bx bxl-github'></i></a>
             <a href="https://www.instagram.com/putra.ash/"><i class='bx bxl-instagram'></i></a>
             <a href=""><i class='bx bxl-facebook'></i></a>
         </div>

@@ -8,10 +8,7 @@ import AdminPage from '../views/pages/admin/admin';
 import CreateArticle from '../views/pages/admin/create';
 import LoginAdmin from '../views/pages/admin/login';
 import RegisterAdmin from '../views/pages/admin/register';
-import UserForm from '../views/pages/user/login';
-import RegisterUser from '../views/pages/user/register';
 import EditArticle from '../views/pages/admin/edit_article';
-
 
 const routes = {
   '/': showCard, // default page
@@ -23,8 +20,6 @@ const routes = {
   '/article/:id': Detail,
   '/login': LoginAdmin,
   '/register': RegisterAdmin,
-  '/user_login': UserForm,
-  '/register_user': RegisterUser,
   '/create_article': CreateArticle,
   '/edit_article/:id': EditArticle,
   '/admin': AdminPage,

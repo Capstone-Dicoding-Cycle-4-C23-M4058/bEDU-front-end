@@ -144,7 +144,7 @@ class ArtichelDbSource {
       throw new Error(error.message);
     }
   }
-  
+
   static async registerUser(nama, username, email, password, passwordConfirm) {
     try {
       const data = {
@@ -176,6 +176,7 @@ class ArtichelDbSource {
       throw new Error(error.message);
     }
   }
+
   static async loginUser(username, password) {
     try {
       const data = {
