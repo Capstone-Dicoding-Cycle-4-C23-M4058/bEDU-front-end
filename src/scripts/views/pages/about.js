@@ -49,7 +49,7 @@ const About = {
               <img src="img/profile2.jpg" alt="">
              </div>
              <div class="details">
-               <div class="name">Rahadina Budiman Sundara</div>
+               <div class="name">Rahadina Budiman S.</div>
                <div class="job">Backend Developer</div>
              </div>
              <div class="media-icons">
