@@ -58,19 +58,51 @@
                                 const bEDUCookie = getCookieValue('bEDUCookie');
                                 const parsedToken = parseJwtPayload(bEDUCookie);
                                 const navBtn = document.getElementById("nav-btn4");
+                                const home = document.getElementById("nav-btn");
 
                                 const currentRoute = window.location.hash.substring(2);
+
                                 if (!parsedToken || parsedToken.role === 'Admin') {
                                     if (currentRoute === 'admin') {
                                         navBtn.innerHTML = "Logout";
-                                        navBtn.href = "#";
+
+                                        // Cek apakah elemen "nav-btn5" sudah ada sebelumnya
+                                        let createArticleBtn = document.getElementById("nav-btn5");
+                                        if (!createArticleBtn) {
+                                            createArticleBtn = document.createElement("a");
+                                            createArticleBtn.href = "#";
+                                            createArticleBtn.className = "nav-btn";
+                                            createArticleBtn.id = "nav-btn5";
+                                            createArticleBtn.innerHTML = "Create Article";
+                                            home.parentNode.insertBefore(createArticleBtn, home.nextSibling);
+                                        }
+
+                                        const bookmarkBtn = document.getElementById("nav-btn2");
+                                        if (bookmarkBtn) {
+                                            bookmarkBtn.parentNode.removeChild(bookmarkBtn);
+                                        }
+
+                                        const aboutBtn = document.getElementById("nav-btn3");
+                                        if (aboutBtn) {
+                                            aboutBtn.parentNode.removeChild(aboutBtn);
+                                        }
                                     } else {
                                         navBtn.innerHTML = "Login";
-                                        navBtn.href = "/#/login";
+
+                                        // Hapus elemen "nav-btn5" jika ada
+                                        const createArticleBtn = document.getElementById("nav-btn5");
+                                        if (createArticleBtn) {
+                                            createArticleBtn.parentNode.removeChild(createArticleBtn);
+                                        }
                                     }
                                 } else {
                                     navBtn.innerHTML = "Logout";
-                                    navBtn.href = "/#/logout";
+
+                                    // Hapus elemen "nav-btn5" jika ada
+                                    const createArticleBtn = document.getElementById("nav-btn5");
+                                    if (createArticleBtn) {
+                                        createArticleBtn.parentNode.removeChild(createArticleBtn);
+                                    }
                                 }
                             }
 
@@ -78,6 +110,7 @@
 
                             // Tambahkan event listener untuk menangani perubahan URL saat halaman diperbarui
                             window.addEventListener("hashchange", updateNavBtn);
+                            window.addEventListener("pageshow", updateNavBtn);
                         </script>
                     </li>
                 </ul>

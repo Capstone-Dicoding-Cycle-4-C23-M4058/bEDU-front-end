@@ -3,6 +3,8 @@ import { createArticleForm } from '../../templates/template-creator';
 
 const CreateArticle = {
   async render() {
+    const nav = document.getElementById('bar-nav');
+    nav.classList.add('admin-nav');
     return createArticleForm();
   },
 

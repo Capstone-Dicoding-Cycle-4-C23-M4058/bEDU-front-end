@@ -91,179 +91,229 @@ const createTemplateAdminArticle = data => {
       </a>
       <span class="post-date">${tanggalFormat}</span>
       <p class="post-description">${data.abstract}</p>
-      <button type="button" id="deleteArticle" class="btn btn-danger btn-block mb-4" data-id="${data.article_id}">Delete Article</button>
-      <button type="button" id="editArticle" class="btn btn-danger btn-block mb-4" data-id="${data.article_id}">Edit Article</button>
+      <button type="button" id="deleteArticle" class="btn btn-danger btn-del btn-block mb-4" data-id="${data.article_id}">Delete</button>
+      <button type="button" id="editArticle" class="btn btn-danger btn-edit btn-block mb-4" data-id="${data.article_id}">Edit</button>
     </div>
   `;
 };
 
 const createArticleForm = () => `
+<section class="admin"></section>
+<section class="admin">
  <div class="form-container">
   <div class="form-wrapper">
   <form id="CreateArticleForm" enctype="multipart/form-data">
+  <h3>Create Article</h3>
       <div class="form-outline mb-4">
-          <input type="text" id="title" class="form-control" />
           <label class="form-label" for="title">Judul Artikel</label>
+          <input type="text" id="title" class="form-control" />
       </div>
 
       <div class="form-outline mb-4">
-          <input type="text" id="abstract" class="form-control" />
           <label class="form-label" for="abstract">Abstract</label>
+          <input type="text" id="abstract" class="form-control" />
       </div>
 
       <div class="form-outline mb-4">
-          <input type="text" id="description" class="form-control" />
           <label class="form-label" for="description">Isi Artikel</label>
+          <input type="text" id="description" class="form-control" />
       </div>
 
       <div class="form-outline mb-4">
-          <input type="text" id="label" class="form-control" />
           <label class="form-label" for="label">Label</label>
+          <input type="text" id="label" class="form-control" />
       </div>
 
-      <div class="form-outline mb-4">
-          <input type="file" id="thumbnail" class="form-control" />
+      <div class="form-outline mb-4 upload-file">
           <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
+          <input type="file" id="thumbnail" class="form-control btn-upl" >
       </div>
 
-      <div class="form-outline mb-4">
-          <input type="file" id="image" class="form-control" />
+      <div class="form-outline mb-4 upload-file">
           <label class="form-label" for="image">Image Tambahan Artikel</label>
+          <input type="file" id="image" class="form-control btn-upl" />
       </div>
 
-      <button type="button" id="CreateArticle" class="btn btn-primary btn-block mb-4">Create Article</button>
+      <button type="button" id="CreateArticle" class="btn btn-primary btn-acc btn-block mb-4">Create Article</button>
   </form>
   </div>
   </div>
+  </section>
+  <section class="admin"></section>
 `;
 
 const RegisterAdminForm = () => `
+<section class="admin">
 <div class="form-container">
   <div class="form-wrapper">
   <form id="RegisterAdminForm" enctype="multipart/form-data">
+  <h3>Register Admin</h3>
   <!-- Nama input -->
   <div class="form-outline mb-4">
-      <input type="email" id="namaLengkap" class="form-control" />
       <label class="form-label" for="namaLengkap">Nama Lengkap</label>
+      <input type="email" id="namaLengkap" class="form-control" />
   </div>
 
   <!-- Email input -->
   <div class="form-outline mb-4">
-      <input type="email" id="username" class="form-control" />
       <label class="form-label" for="emailInput">Username</label>
+      <input type="email" id="username" class="form-control" />
   </div>
   <!-- Email input -->
   <div class="form-outline mb-4">
-      <input type="email" id="emailInput" class="form-control" />
       <label class="form-label" for="emailInput">Email address</label>
+      <input type="email" id="emailInput" class="form-control" />
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-      <input type="password" id="passwordInput" class="form-control" />
       <label class="form-label" for="passwordInput">Password</label>
+      <input type="password" id="passwordInput" class="form-control" />
   </div>
 
   <div class="form-outline mb-4">
-      <input type="password" id="passwordConfirm" class="form-control" />
       <label class="form-label" for="passwordInput">Password Confirm</label>
+      <input type="password" id="passwordConfirm" class="form-control" />
   </div>
 
-  <button type="button" id="RegisterAdminButton" class="btn btn-primary btn-block mb-4">Register Admin</button>
+  <button type="button" id="RegisterAdminButton" class="btn btn-primary btn-acc btn-block mb-4">Register Admin</button>
   </form>
   </div>
   </div>
+  </section>
 `;
 
 const loginAdminForm = () => `
+
   <div class="form-container">
       <div class="form-wrapper">
           <form id="loginAdminForm" enctype="multipart/form-data">
+          <h3>Login Admin</h3>
               <div class="form-outline mb-4">
-                  <input type="email" id="username" class="form-control" />
                   <label class="form-label" for="emailInput">Username</label>
+                  <input type="email" id="username" class="form-control" />
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                  <input type="password" id="passwordInput" class="form-control" />
                   <label class="form-label" for="passwordInput">Password</label>
+                  <input type="password" id="passwordInput" class="form-control" />
               </div>
-              <button type="button" id="signInBtn" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+              <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
           </form>
       </div>
-</div>
+  </div>
 `;
 const RegisterUserForm = () => `
-section class="wrapper">
-      <div class="form signup">
-        <header>Signup</header>
-        <form action="#">
-          <input type="text" placeholder="Full name" required />
-          <input type="text" placeholder="Email address" required />
-          <input type="password" placeholder="Password" required />
-          <div class="checkbox">
-            <input type="checkbox" id="signupCheck" />
-          </div>
-          <input type="submit" value="Signup" />
-        </form>
-      </div>
-</section>
+<section class="admin">
+<div class="form-container">
+  <div class="form-wrapper">
+  <form id="RegisterUserForm" enctype="multipart/form-data">
+  <h3>Register User</h3>
+  <!-- Nama input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="namaLengkap">Nama Lengkap</label>
+      <input type="email" id="namaLengkap" class="form-control" />
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="emailInput">Username</label>
+      <input type="email" id="username" class="form-control" />
+  </div>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="emailInput">Email address</label>
+      <input type="email" id="emailInput" class="form-control" />
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="passwordInput">Password</label>
+      <input type="password" id="passwordInput" class="form-control" />
+  </div>
+
+  <div class="form-outline mb-4">
+      <label class="form-label" for="passwordInput">Password Confirm</label>
+      <input type="password" id="passwordConfirm" class="form-control" />
+  </div>
+
+  <button type="button" id="RegisterUserButton" class="btn btn-primary btn-acc btn-block mb-4">Register Admin</button>
+  </form>
+  </div>
+  </div>
+  </section>
 
 `;
 
 const loginUserForm = () => `
-<div class="form login">
-        <header>Login</header>
-        <form action="#">
-          <input type="text" placeholder="Email address" required />
-          <input type="password" placeholder="Password" required />
-          <a href="#">Forgot password?</a>
-          <input type="submit" id="signInBtn" value="Login" />
-        </form>
-</div>
+<div class="form-container">
+      <div class="form-wrapper">
+          <form id="loginUser" enctype="multipart/form-data">
+          <h3>Login User</h3>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="emailInput">Username</label>
+                  <input type="email" id="username" class="form-control" />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="passwordInput">Password</label>
+                  <input type="password" id="passwordInput" class="form-control" />
+              </div>
+
+              <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
+              <p> Don't have an account? <a href="/#/register_user">Register</a></p>
+          </form>
+      </div>
+  </div>
 `;
 
 const updateArticle = data => `
-<div class="form-container">
+<section class="admin"></section>
+<section class="admin">
+<div class="form-container edit-article">
   <div class="form-wrapper">
-  <form id="UpdateArticleForm" enctype="multipart/form-data">
-      <div class="form-outline mb-4">
-          <input type="text" id="title" class="form-control" value="${data.title}"/>
-          <label class="form-label" for="title">Judul Artikel</label>
-      </div>
+    <form id="UpdateArticleForm" enctype="multipart/form-data">
+        <div class="form-outline mb-4">
+            <label class="form-label" for="title">Judul Artikel</label>
+            <input type="text" id="title" class="form-control" value="${data.title}"/>
+        </div>
 
-      <div class="form-outline mb-4">
-          <input type="text" id="abstract" class="form-control" value="${data.abstract}"/>
-          <label class="form-label" for="abstract">Abstract</label>
-      </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="abstract">Abstract</label>
+            <input type="text" id="abstract" class="form-control" value="${data.abstract}"/>
+        </div>
 
-      <div class="form-outline mb-4">
-          <input type="text" id="description" class="form-control" value="${data.description}"/>
-          <label class="form-label" for="description">Isi Artikel</label>
-      </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="description">Isi Artikel</label>
+            <input type="text" id="description" class="form-control" value="${data.description}"/>
+        </div>
 
-      <div class="form-outline mb-4">
-          <input type="text" id="label" class="form-control" value="${data.label}"/>
-          <label class="form-label" for="label">Label</label>
-      </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="label">Label</label>
+            <input type="text" id="label" class="form-control" value="${data.label}"/>
+        </div>
 
-      <div class="form-outline mb-4">
-      <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
-          <input type="file" id="thumbnail" class="form-control" />
-          <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
-      </div>
+        <div class="form-outline mb-4">
+        <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
+        <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
+            <input type="file" id="thumbnail" class="form-control" />
+        </div>
 
-      <div class="form-outline mb-4">
-      <img src="${data.image}" alt="${data.title}" class="post-img">
-          <input type="file" id="image" class="form-control" />
-          <label class="form-label" for="image">Image Tambahan Artikel</label>
-      </div>
+        <div class="form-outline mb-4">
+        <label class="form-label" for="image">Image Tambahan Artikel</label>
+        <img src="${data.image}" alt="${data.title}" class="post-img">
+            <input type="file" id="image" class="form-control" />
+        </div>
 
-      <button type="button" id="UpdateArticle" class="btn btn-primary btn-block mb-4">Update Article</button>
-  </form>
+        <button type="button" id="UpdateArticle" class="btn btn-primary btn-acc btn-block mb-4">Update Article</button>
+    </form>
   </div>
   </div>
+  </section>
+  <section class="admin"></section>
 `;
 
 export {
