@@ -46,7 +46,7 @@ const About = {
           <div class="card">
            <div class="content">
              <div class="img">
-              <img src="images/img2.jpg" alt="">
+              <img src="img/profile2.jpg" alt="">
              </div>
              <div class="details">
                <div class="name">Rahadina Budiman Sundara</div>
