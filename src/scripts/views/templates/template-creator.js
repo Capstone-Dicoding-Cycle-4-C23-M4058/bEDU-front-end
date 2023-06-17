@@ -1,12 +1,12 @@
-const createSindoArtichel = (data) => {
+const createSindoArtichel = data => {
   const jsonString = `{"pubDate": "${data.pubDate}"}`;
   const jsonObject = JSON.parse(jsonString);
   const createdAt = jsonObject.pubDate;
   const tanggal = createdAt.substring(0, 10);
   const tanggalAwal = tanggal;
   const Newtanggal = new Date(tanggalAwal);
-  const options = { day: "2-digit", month: "long", year: "numeric" };
-  const tanggalFormat = Newtanggal.toLocaleDateString("id-ID", options);
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
   return `
     <div class="post-box">
         <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
@@ -20,7 +20,7 @@ const createSindoArtichel = (data) => {
 `;
 };
 
-const createDetailArtichel = (data) => `
+const createDetailArtichel = data => `
 <section class="post-header">
         <div class="header-content post-container">
             <!-- Title -->
@@ -37,15 +37,15 @@ const createDetailArtichel = (data) => `
     </section>
 `;
 
-const createTemplateArtichel = (data) => {
+const createTemplateArtichel = data => {
   const jsonString = `{"created_at": "${data.created_at}"}`;
   const jsonObject = JSON.parse(jsonString);
   const createdAt = jsonObject.created_at;
   const tanggal = createdAt.substring(0, 10);
   const tanggalAwal = tanggal;
   const Newtanggal = new Date(tanggalAwal);
-  const options = { day: "2-digit", month: "long", year: "numeric" };
-  const tanggalFormat = Newtanggal.toLocaleDateString("id-ID", options);
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
 
   return `
       <div class="post-box">
@@ -72,15 +72,15 @@ const createUnlikeButtonTemplate = () => `
   </button>
 `;
 
-const createTemplateAdminArticle = (data) => {
+const createTemplateAdminArticle = data => {
   const jsonString = `{"created_at": "${data.created_at}"}`;
   const jsonObject = JSON.parse(jsonString);
   const createdAt = jsonObject.created_at;
   const tanggal = createdAt.substring(0, 10);
   const tanggalAwal = tanggal;
   const Newtanggal = new Date(tanggalAwal);
-  const options = { day: "2-digit", month: "long", year: "numeric" };
-  const tanggalFormat = Newtanggal.toLocaleDateString("id-ID", options);
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
 
   return `
     <div class="post-box">
@@ -219,12 +219,12 @@ const loginUserForm = () => `
           <input type="text" placeholder="Email address" required />
           <input type="password" placeholder="Password" required />
           <a href="#">Forgot password?</a>
-          <input type="submit" value="Login" />
+          <input type="submit" id="signInBtn" value="Login" />
         </form>
 </div>
 `;
 
-const updateArticle = (data) => `
+const updateArticle = data => `
 <div class="form-container">
   <div class="form-wrapper">
   <form id="UpdateArticleForm" enctype="multipart/form-data">

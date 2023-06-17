@@ -15,6 +15,7 @@ const LoginForm = {
       try {
         const response = await ArtichelDbSource.loginAdmin(usernameInput, passwordInput);
         console.log(response);
+        window.location.href = '/#/admin';
       } catch (error) {
         console.error('Error:', error.message);
       }

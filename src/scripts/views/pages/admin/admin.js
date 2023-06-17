@@ -15,6 +15,20 @@ const AdminPage = {
   },
 
   async afterRender() {
+    const bEDUCookie = getCookieValue('bEDUCookie');
+    if (!bEDUCookie) {
+      // Jika cookie "bEDUCookie" tidak ditemukan, redirect ke halaman login
+      window.location.href = '/#/login';
+      return;
+    }
+
+    const parsedToken = parseJwtPayload(bEDUCookie);
+    if (!parsedToken || parsedToken.role !== 'Admin') {
+      // Jika token tidak valid atau role bukan admin, redirect ke halaman login
+      window.location.href = '/#/login';
+      return;
+    }
+
     const artichels = await ArtichelDbSource.showCardArtichel();
     const artichelsContainer = document.querySelector('.admin-articles');
     console.log(artichels);
@@ -37,8 +51,6 @@ const AdminPage = {
         const articleId = button.getAttribute('data-id');
 
         try {
-          const bEDUCookie = getCookieValue('bEDUCookie');
-
           if (bEDUCookie) {
             const response = await ArtichelDbSource.deleteArticle(articleId, bEDUCookie);
             console.log(response);
@@ -51,18 +63,28 @@ const AdminPage = {
 
         console.log(`Delete article with id: ${articleId}`);
       });
-      function getCookieValue(cookieName) {
-        const cookieString = document.cookie;
-        const cookies = cookieString.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
-          if (cookie.startsWith(`${cookieName}=`)) {
-            return cookie.substring(cookieName.length + 1);
-          }
+    });
+    function getCookieValue(cookieName) {
+      const cookieString = document.cookie;
+      const cookies = cookieString.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(`${cookieName}=`)) {
+          return cookie.substring(cookieName.length + 1);
         }
+      }
+      return null;
+    }
+    function parseJwtPayload(token) {
+      try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = atob(base64);
+        return JSON.parse(jsonPayload);
+      } catch (error) {
         return null;
       }
-    });
+    }
   },
 };
 
