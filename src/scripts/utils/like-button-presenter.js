@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import FavoriteBookIdb from '../data/favorite-idb';
 import { createLikeButtonTemplate, createUnlikeButtonTemplate } from '../views/templates/template-creator';
 

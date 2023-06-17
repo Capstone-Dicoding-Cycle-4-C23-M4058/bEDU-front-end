@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable camelcase */
 import { openDB } from 'idb';
 import CONFIG from '../globals/config';
 
