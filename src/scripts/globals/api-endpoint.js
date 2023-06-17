@@ -6,6 +6,7 @@ const API_ENDPOINT = {
   SHOW_NEWS: `${CONFIG.BASE_URL_SINDO}edukasi`,
   ADMIN_ARTICLES: `${CONFIG.BASE_URL}article`,
   LOGIN_ADMIN: `${CONFIG.BASE_URL}admin/login`,
+  LOGOUT_ADMIN: `${CONFIG.BASE_URL}admin/logout`,
   REGISTER_ADMIN: `${CONFIG.BASE_URL}admin/register`,
   LOGIN_USER: `${CONFIG.BASE_URL}login`,
   REGISTER_USER: `${CONFIG.BASE_URL}register`,

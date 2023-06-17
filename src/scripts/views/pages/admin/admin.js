@@ -64,6 +64,25 @@ const AdminPage = {
         console.log(`Delete article with id: ${articleId}`);
       });
     });
+
+    const logoutAdmin = document.querySelectorAll('#nav-btn4');
+    logoutAdmin.forEach(button => {
+      button.addEventListener('click', async () => {
+        console.log(bEDUCookie);
+      try {
+        if (bEDUCookie) {
+          const response = await ArtichelDbSource.logoutAdmin(bEDUCookie);
+          console.log(response);
+        } else {
+          console.error('Cookie "bEDUCookie" not found');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+      console.log('Logout Sukses');
+  });
+});
+
     function getCookieValue(cookieName) {
       const cookieString = document.cookie;
       const cookies = cookieString.split(';');
