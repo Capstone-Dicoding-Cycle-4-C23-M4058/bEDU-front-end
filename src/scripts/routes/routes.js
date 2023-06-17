@@ -22,6 +22,7 @@ const routes = {
   '/register': RegisterAdmin,
   '/create_article': CreateArticle,
   '/edit_article/:id': EditArticle,
+  '/logout_admin': EditArticle,
   '/admin': AdminPage,
 };
 
