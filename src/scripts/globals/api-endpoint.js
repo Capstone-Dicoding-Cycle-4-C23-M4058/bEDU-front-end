@@ -7,6 +7,8 @@ const API_ENDPOINT = {
   ADMIN_ARTICLES: `${CONFIG.BASE_URL}article`,
   LOGIN_ADMIN: `${CONFIG.BASE_URL}admin/login`,
   REGISTER_ADMIN: `${CONFIG.BASE_URL}admin/register`,
+  LOGIN_USER: `${CONFIG.BASE_URL}login`,
+  REGISTER_USER: `${CONFIG.BASE_URL}register`,
   CREATE_ARTICLE: `${CONFIG.BASE_URL}admin/article`,
   DELETE_ARTICLE: id => `${CONFIG.BASE_URL}admin/article/${id}`,
   EDIT_ARTICLE: id => `${CONFIG.BASE_URL}admin/article/${id}`,

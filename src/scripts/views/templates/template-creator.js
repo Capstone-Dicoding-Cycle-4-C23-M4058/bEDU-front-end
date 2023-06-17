@@ -1,12 +1,12 @@
-const createSindoArtichel = data => {
+const createSindoArtichel = (data) => {
   const jsonString = `{"pubDate": "${data.pubDate}"}`;
   const jsonObject = JSON.parse(jsonString);
   const createdAt = jsonObject.pubDate;
   const tanggal = createdAt.substring(0, 10);
   const tanggalAwal = tanggal;
   const Newtanggal = new Date(tanggalAwal);
-  const options = { day: '2-digit', month: 'long', year: 'numeric' };
-  const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  const tanggalFormat = Newtanggal.toLocaleDateString("id-ID", options);
   return `
     <div class="post-box">
         <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
@@ -20,7 +20,7 @@ const createSindoArtichel = data => {
 `;
 };
 
-const createDetailArtichel = data => `
+const createDetailArtichel = (data) => `
 <section class="post-header">
         <div class="header-content post-container">
             <!-- Title -->
@@ -37,15 +37,15 @@ const createDetailArtichel = data => `
     </section>
 `;
 
-const createTemplateArtichel = data => {
+const createTemplateArtichel = (data) => {
   const jsonString = `{"created_at": "${data.created_at}"}`;
   const jsonObject = JSON.parse(jsonString);
   const createdAt = jsonObject.created_at;
   const tanggal = createdAt.substring(0, 10);
   const tanggalAwal = tanggal;
   const Newtanggal = new Date(tanggalAwal);
-  const options = { day: '2-digit', month: 'long', year: 'numeric' };
-  const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  const tanggalFormat = Newtanggal.toLocaleDateString("id-ID", options);
 
   return `
       <div class="post-box">
@@ -72,15 +72,15 @@ const createUnlikeButtonTemplate = () => `
   </button>
 `;
 
-const createTemplateAdminArticle = data => {
+const createTemplateAdminArticle = (data) => {
   const jsonString = `{"created_at": "${data.created_at}"}`;
   const jsonObject = JSON.parse(jsonString);
   const createdAt = jsonObject.created_at;
   const tanggal = createdAt.substring(0, 10);
   const tanggalAwal = tanggal;
   const Newtanggal = new Date(tanggalAwal);
-  const options = { day: '2-digit', month: 'long', year: 'numeric' };
-  const tanggalFormat = Newtanggal.toLocaleDateString('id-ID', options);
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  const tanggalFormat = Newtanggal.toLocaleDateString("id-ID", options);
 
   return `
     <div class="post-box">
@@ -189,14 +189,42 @@ const loginAdminForm = () => `
                   <input type="password" id="passwordInput" class="form-control" />
                   <label class="form-label" for="passwordInput">Password</label>
               </div>
-
               <button type="button" id="signInBtn" class="btn btn-primary btn-block mb-4">Sign in</button>
           </form>
       </div>
-  </div>
+</div>
+`;
+const RegisterUserForm = () => `
+section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" placeholder="Full name" required />
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+</section>
+
 `;
 
-const updateArticle = data => `
+const loginUserForm = () => `
+<div class="form login">
+        <header>Login</header>
+        <form action="#">
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <input type="submit" value="Login" />
+        </form>
+</div>
+`;
+
+const updateArticle = (data) => `
 <div class="form-container">
   <div class="form-wrapper">
   <form id="UpdateArticleForm" enctype="multipart/form-data">
@@ -243,6 +271,8 @@ export {
   updateArticle,
   RegisterAdminForm,
   loginAdminForm,
+  loginUserForm,
+  RegisterUserForm,
   createArticleForm,
   createDetailArtichel,
   createTemplateArtichel,
