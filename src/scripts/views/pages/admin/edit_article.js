@@ -4,6 +4,8 @@ import { updateArticle } from '../../templates/template-creator';
 
 const EditArticle = {
   async render() {
+    const nav = document.getElementById('bar-nav');
+    nav.classList.add('admin-nav');
     return `
           <div class="post-detail"></div>
         `;

@@ -3,6 +3,8 @@ import { loginAdminForm } from '../../templates/template-creator';
 
 const LoginForm = {
   async render() {
+    const nav = document.getElementById('bar-nav');
+    nav.classList.add('admin-nav');
     return loginAdminForm();
   },
 
