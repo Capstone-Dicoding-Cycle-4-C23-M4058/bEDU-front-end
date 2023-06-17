@@ -73,6 +73,10 @@ const AdminPage = {
         if (bEDUCookie) {
           const response = await ArtichelDbSource.logoutAdmin(bEDUCookie);
           console.log(response);
+
+          const metaTag = document.createElement('meta');
+          metaTag.setAttribute('http-equiv', 'refresh');
+          metaTag.setAttribute('content', '1;/');
         } else {
           console.error('Cookie "bEDUCookie" not found');
         }

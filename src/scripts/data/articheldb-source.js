@@ -86,6 +86,30 @@ class ArtichelDbSource {
     }
   }
 
+  static async logoutUser(token) {
+    try {
+      const response = await fetch(API_ENDPOINT.LOGOUT_USER, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.message);
+      }
+
+      // Menghapus cookie bEDUCookie
+      document.cookie = 'bEDUCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   static async updateArticle(formData, articleId, token) {
     try {
       const response = await fetch(API_ENDPOINT.EDIT_ARTICLE(articleId), {

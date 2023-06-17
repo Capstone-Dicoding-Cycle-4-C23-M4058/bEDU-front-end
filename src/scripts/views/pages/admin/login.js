@@ -17,7 +17,10 @@ const LoginForm = {
       try {
         const response = await ArtichelDbSource.loginAdmin(usernameInput, passwordInput);
         console.log(response);
-        window.location.href = '/#/admin';
+        const metaTag = document.createElement('meta');
+        metaTag.setAttribute('http-equiv', 'refresh');
+        metaTag.setAttribute('content', '1;/#/admin');
+        document.head.appendChild(metaTag);
       } catch (error) {
         console.error('Error:', error.message);
       }

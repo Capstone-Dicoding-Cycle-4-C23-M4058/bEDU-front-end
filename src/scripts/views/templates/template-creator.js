@@ -206,33 +206,68 @@ const loginAdminForm = () => `
   </div>
 `;
 const RegisterUserForm = () => `
-section class="wrapper">
-      <div class="form signup">
-        <header>Signup</header>
-        <form action="#">
-          <input type="text" placeholder="Full name" required />
-          <input type="text" placeholder="Email address" required />
-          <input type="password" placeholder="Password" required />
-          <div class="checkbox">
-            <input type="checkbox" id="signupCheck" />
-          </div>
-          <input type="submit" value="Signup" />
-        </form>
-      </div>
-</section>
+<section class="admin">
+<div class="form-container">
+  <div class="form-wrapper">
+  <form id="RegisterUserForm" enctype="multipart/form-data">
+  <h3>Register User</h3>
+  <!-- Nama input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="namaLengkap">Nama Lengkap</label>
+      <input type="email" id="namaLengkap" class="form-control" />
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="emailInput">Username</label>
+      <input type="email" id="username" class="form-control" />
+  </div>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="emailInput">Email address</label>
+      <input type="email" id="emailInput" class="form-control" />
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="passwordInput">Password</label>
+      <input type="password" id="passwordInput" class="form-control" />
+  </div>
+
+  <div class="form-outline mb-4">
+      <label class="form-label" for="passwordInput">Password Confirm</label>
+      <input type="password" id="passwordConfirm" class="form-control" />
+  </div>
+
+  <button type="button" id="RegisterUserButton" class="btn btn-primary btn-acc btn-block mb-4">Register Admin</button>
+  </form>
+  </div>
+  </div>
+  </section>
 
 `;
 
 const loginUserForm = () => `
-<div class="form login">
-        <header>Login</header>
-        <form action="#">
-          <input type="text" placeholder="Email address" required />
-          <input type="password" placeholder="Password" required />
-          <a href="#">Forgot password?</a>
-          <input type="submit" id="signInBtn" value="Login" />
-        </form>
-</div>
+<div class="form-container">
+      <div class="form-wrapper">
+          <form id="loginUser" enctype="multipart/form-data">
+          <h3>Login User</h3>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="emailInput">Username</label>
+                  <input type="email" id="username" class="form-control" />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="passwordInput">Password</label>
+                  <input type="password" id="passwordInput" class="form-control" />
+              </div>
+
+              <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
+              <p> Don't have an account? <a href="/#/register_user">Register</a></p>
+          </form>
+      </div>
+  </div>
 `;
 
 const updateArticle = data => `
