@@ -3,6 +3,8 @@ import { RegisterAdminForm } from '../../templates/template-creator';
 
 const RegisterAdmin = {
   async render() {
+    const nav = document.getElementById('bar-nav');
+    nav.classList.add('admin-nav');
     return RegisterAdminForm();
   },
 

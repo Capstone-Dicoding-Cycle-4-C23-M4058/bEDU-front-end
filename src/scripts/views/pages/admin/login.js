@@ -3,6 +3,8 @@ import { loginAdminForm } from '../../templates/template-creator';
 
 const LoginForm = {
   async render() {
+    const nav = document.getElementById('bar-nav');
+    nav.classList.add('admin-nav');
     return loginAdminForm();
   },
 
@@ -15,7 +17,10 @@ const LoginForm = {
       try {
         const response = await ArtichelDbSource.loginAdmin(usernameInput, passwordInput);
         console.log(response);
-        window.location.href = '/#/admin';
+        const metaTag = document.createElement('meta');
+        metaTag.setAttribute('http-equiv', 'refresh');
+        metaTag.setAttribute('content', '1;/#/admin');
+        document.head.appendChild(metaTag);
       } catch (error) {
         console.error('Error:', error.message);
       }
