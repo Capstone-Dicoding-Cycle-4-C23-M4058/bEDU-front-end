@@ -204,7 +204,35 @@ const loginAdminForm = () => `
           </form>
       </div>
   </div>
+`;
+const RegisterUserForm = () => `
+section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" placeholder="Full name" required />
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+</section>
 
+`;
+
+const loginUserForm = () => `
+<div class="form login">
+        <header>Login</header>
+        <form action="#">
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <input type="submit" id="signInBtn" value="Login" />
+        </form>
+</div>
 `;
 
 const updateArticle = data => `
@@ -258,6 +286,8 @@ export {
   updateArticle,
   RegisterAdminForm,
   loginAdminForm,
+  loginUserForm,
+  RegisterUserForm,
   createArticleForm,
   createDetailArtichel,
   createTemplateArtichel,
