@@ -29,7 +29,7 @@ const showNews = {
     const artichels = await NewslDbSource.showCardNews();
     const Container = document.querySelector('.post');
     console.log(artichels);
-    artichels.forEach((data) => {
+    artichels.forEach(data => {
       Container.innerHTML += createSindoArtichel(data);
     });
   },

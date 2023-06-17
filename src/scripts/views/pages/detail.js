@@ -37,7 +37,7 @@ const Detail = {
       },
     });
 
-    const recomend = await ArtichelDbSource.showCardArtichel().then((data) => data.slice(0, 3));
+    const recomend = await ArtichelDbSource.showCardArtichel().then(data => data.slice(0, 3));
     const artichelsContainer = document.querySelector('.post');
 
     // Fungsi untuk mengacak urutan elemen dalam array
@@ -51,7 +51,7 @@ const Detail = {
 
     const randomizedRecomend = shuffleArray(recomend);
 
-    randomizedRecomend.forEach((data) => {
+    randomizedRecomend.forEach(data => {
       artichelsContainer.innerHTML += createTemplateArtichel(data);
     });
   },

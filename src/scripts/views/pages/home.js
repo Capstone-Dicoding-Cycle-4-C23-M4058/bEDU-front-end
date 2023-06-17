@@ -50,9 +50,9 @@ const showCard = {
   },
 
   async afterRender() {
-    const artichels = await ArtichelDbSource.showCardArtichel().then((data) => data.slice(0, 6));
+    const artichels = await ArtichelDbSource.showCardArtichel().then(data => data.slice(0, 6));
     const artichelsContainer = document.querySelector('.post');
-    artichels.forEach((data) => {
+    artichels.forEach(data => {
       artichelsContainer.innerHTML += createTemplateArtichel(data);
     });
   },
