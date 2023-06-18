@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { createArticleForm } from '../../templates/template-creator';
 
@@ -35,6 +36,18 @@ const CreateArticle = {
           const response = await ArtichelDbSource.createArticle(formData, bEDUCookie);
           console.log(response);
 
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Create Article Success!',
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            const metaTag = document.createElement('meta');
+            metaTag.setAttribute('http-equiv', 'refresh');
+            metaTag.setAttribute('content', '1;url=/#/admin');
+            document.head.appendChild(metaTag);
+          });
           // Tampilkan pesan sukses atau alihkan pengguna ke halaman lain
           // sesuai dengan kebutuhan aplikasi Anda
         } else {
@@ -42,7 +55,11 @@ const CreateArticle = {
         }
       } catch (error) {
         // Tangani kesalahan jika ada
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `${error.message}`,
+        });
       }
     });
 

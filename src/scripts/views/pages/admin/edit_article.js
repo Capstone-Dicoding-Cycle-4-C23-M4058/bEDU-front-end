@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import UrlParser from '../../../routes/url-parser';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { updateArticle } from '../../templates/template-creator';
@@ -64,7 +65,19 @@ const EditArticle = {
             bEDUCookie);
 
             console.log(response);
-            window.location.href = '/#/admin';
+
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Edit Article Success!',
+              showConfirmButton: false,
+              timer: 1500,
+            }).then(() => {
+              const metaTag = document.createElement('meta');
+              metaTag.setAttribute('http-equiv', 'refresh');
+              metaTag.setAttribute('content', '1;url=/#/admin');
+              document.head.appendChild(metaTag);
+            });
           // Tampilkan pesan sukses atau alihkan pengguna ke halaman lain
           // sesuai dengan kebutuhan aplikasi Anda
         } else {
@@ -72,7 +85,11 @@ const EditArticle = {
         }
       } catch (error) {
         // Tangani kesalahan jika ada
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `${error.message}`,
+        });
       }
     });
 

@@ -39,13 +39,15 @@ async function loginUser() {
     const response = await ArtichelDbSource.loginUser(usernameInput, passInput);
     console.log(response);
     Swal.fire({
-      title: 'Login Success!',
-      text: `Welcome ${response.data.username}`,
+      position: 'center',
       icon: 'success',
+      title: 'Login Success!',
+      showConfirmButton: false,
+      timer: 1500,
     }).then(() => {
       const metaTag = document.createElement('meta');
       metaTag.setAttribute('http-equiv', 'refresh');
-      metaTag.setAttribute('content', '1;url=/?#/favorite');
+      metaTag.setAttribute('content', '1;url=/#/favorite');
       document.head.appendChild(metaTag);
     });
   } catch (error) {
