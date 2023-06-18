@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { loginAdminForm } from '../../templates/template-creator';
 
@@ -37,11 +38,18 @@ const LoginForm = {
       try {
         const response = await ArtichelDbSource.loginAdmin(usernameInput, passInput);
         console.log(response);
-
-        const metaTag = document.createElement('meta');
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Login Success!',
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          const metaTag = document.createElement('meta');
         metaTag.setAttribute('http-equiv', 'refresh');
         metaTag.setAttribute('content', '1;/#/admin');
         document.head.appendChild(metaTag);
+        });
       } catch (error) {
         console.error('Error:', error.message);
       }
