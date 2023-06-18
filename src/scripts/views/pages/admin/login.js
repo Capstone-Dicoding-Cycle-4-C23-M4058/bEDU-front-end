@@ -46,12 +46,17 @@ const LoginForm = {
           timer: 1500,
         }).then(() => {
           const metaTag = document.createElement('meta');
-        metaTag.setAttribute('http-equiv', 'refresh');
-        metaTag.setAttribute('content', '1;/#/admin');
-        document.head.appendChild(metaTag);
+          metaTag.setAttribute('http-equiv', 'refresh');
+          metaTag.setAttribute('content', '1;/#/admin');
+          document.head.appendChild(metaTag);
         });
-      } catch (error) {
-        console.error('Error:', error.message);
+      } catch (errors) {
+        const errorMessage = errors.message; // Mendapatkan pesan kesalahan dari errorData
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `${errorMessage}`,
+        });
       }
     }
 
