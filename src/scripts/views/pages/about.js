@@ -87,9 +87,9 @@ const About = {
                <div class="job">UX</div>
              </div>
              <div class="media-icons">
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/ferdian_drmpt/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/ferdian-darma-21a89127b/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/FerdiaDarma"><i class='bx bxl-github'></i></a>
              </div>
            </div>
           </div>
