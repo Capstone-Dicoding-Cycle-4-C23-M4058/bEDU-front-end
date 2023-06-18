@@ -31,7 +31,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseJson = await response.json();
@@ -52,7 +52,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseJson = await response.json();
@@ -73,7 +73,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       // Menghapus cookie bEDUCookie
@@ -97,7 +97,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       // Menghapus cookie bEDUCookie
@@ -122,7 +122,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseJson = await response.json();
@@ -149,7 +149,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseData = await response.clone().json();
@@ -183,7 +183,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseJson = await response.json();
@@ -215,7 +215,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseJson = await response.json();
@@ -242,7 +242,7 @@ class ArtichelDbSource {
 
       if (!response.ok) {
         const responseJson = await response.json();
-        throw new Error(responseJson.message);
+        throw new Error(responseJson.errors);
       }
 
       const responseData = await response.clone().json();
