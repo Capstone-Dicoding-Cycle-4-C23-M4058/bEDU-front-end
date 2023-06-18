@@ -65,12 +65,14 @@
                                 if (!parsedToken || parsedToken.role === 'Admin') {
                                     if (currentRoute === 'admin') {
                                         navBtn.innerHTML = "Logout";
+                                        home.href = "/#/admin";
+                                        navBtn.href = "/#/admin";
 
                                         // Cek apakah elemen "nav-btn5" sudah ada sebelumnya
                                         let createArticleBtn = document.getElementById("nav-btn5");
                                         if (!createArticleBtn) {
                                             createArticleBtn = document.createElement("a");
-                                            createArticleBtn.href = "#";
+                                            createArticleBtn.href = "/#/create_article";
                                             createArticleBtn.className = "nav-btn";
                                             createArticleBtn.id = "nav-btn5";
                                             createArticleBtn.innerHTML = "Create Article";
