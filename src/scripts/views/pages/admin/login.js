@@ -9,13 +9,33 @@ const LoginForm = {
   },
 
   async afterRender() {
+    // Mendapatkan elemen tombol sign in
     const signInButton = document.getElementById('signInBtn');
-    signInButton.addEventListener('click', async () => {
+
+    // Mendapatkan elemen input password
+    const passwordInput = document.getElementById('passwordInput');
+
+    // Menambahkan event listener untuk event "click" pada tombol sign in
+    signInButton.addEventListener('click', () => {
+      loginAdmin();
+    });
+
+    // Menambahkan event listener untuk event "keydown" pada input password
+    passwordInput.addEventListener('keydown', event => {
+      // Memeriksa jika tombol yang ditekan adalah "Enter"
+      if (event.key === 'Enter') {
+        loginAdmin();
+      }
+    });
+
+    // Fungsi untuk melakukan login admin
+    async function loginAdmin() {
+      // Mengambil nilai username dan password dari input
       const usernameInput = document.getElementById('username').value;
-      const passwordInput = document.getElementById('passwordInput').value;
+      const passInput = document.getElementById('passwordInput').value;
 
       try {
-        const response = await ArtichelDbSource.loginAdmin(usernameInput, passwordInput);
+        const response = await ArtichelDbSource.loginAdmin(usernameInput, passInput);
         console.log(response);
 
         const metaTag = document.createElement('meta');
@@ -25,7 +45,24 @@ const LoginForm = {
       } catch (error) {
         console.error('Error:', error.message);
       }
-    });
+    }
+
+    // const signInButton = document.getElementById('signInBtn');
+    // signInButton.addEventListener('click', async () => {
+    //   const usernameInput = document.getElementById('username').value;
+    //   const passwordInput = document.getElementById('passwordInput').value;
+
+    //   try {
+    //     const response = await ArtichelDbSource.loginAdmin(usernameInput, passwordInput);
+    //     console.log(response);
+    //     const metaTag = document.createElement('meta');
+    //     metaTag.setAttribute('http-equiv', 'refresh');
+    //     metaTag.setAttribute('content', '1;/#/admin');
+    //     document.head.appendChild(metaTag);
+    //   } catch (error) {
+    //     console.error('Error:', error.message);
+    //   }
+    // });
   },
 };
 
