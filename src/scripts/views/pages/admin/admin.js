@@ -1,3 +1,7 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable comma-dangle */
+/* eslint-disable no-trailing-spaces */
+import Swal from 'sweetalert2';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { createTemplateAdminArticle } from '../../templates/template-creator';
 
@@ -52,16 +56,51 @@ const AdminPage = {
 
         try {
           if (bEDUCookie) {
-            const response = await ArtichelDbSource.deleteArticle(articleId, bEDUCookie);
-            console.log(response);
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+              if (result.isConfirmed) {
+                const response = await ArtichelDbSource.deleteArticle(articleId, bEDUCookie);
+                console.log(response);
+                Swal.fire({
+                  position: 'center',
+                  icon: 'success',
+                  title: 'Delete Article Success!',
+                  showConfirmButton: false,
+                  timer: 1500,
+                }).then(() => {
+                  const metaTag = document.createElement('meta');
+                metaTag.setAttribute('http-equiv', 'refresh');
+                metaTag.setAttribute('content', '1;/#/admin');
+                document.head.appendChild(metaTag);
+                });
+              }
+            });
           } else {
             console.error('Cookie "bEDUCookie" not found');
           }
         } catch (error) {
-          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${error.message}`,
+          });
         }
 
         console.log(`Delete article with id: ${articleId}`);
+      });
+    });
+
+    const createArticle = document.querySelectorAll('nav-btn5');
+    createArticle.forEach(create => {
+      create.addEventListener('click', () => {
+        window.location.href = '/#/create_article';
       });
     });
 
@@ -77,6 +116,7 @@ const AdminPage = {
           const metaTag = document.createElement('meta');
           metaTag.setAttribute('http-equiv', 'refresh');
           metaTag.setAttribute('content', '1;/');
+          document.head.appendChild(metaTag);
         } else {
           console.error('Cookie "bEDUCookie" not found');
         }

@@ -57,8 +57,8 @@ const showCard = {
       artichelsContainer.innerHTML += createTemplateArtichel(data);
     });
 
-    const logoutUser = document.querySelectorAll('#nav-btn4');
-logoutUser.forEach(button => {
+  const logoutUser = document.querySelectorAll('#nav-btn4');
+  logoutUser.forEach(button => {
   button.addEventListener('click', async () => {
     try {
       // Cek isi innerHTML dari #nav-btn4
