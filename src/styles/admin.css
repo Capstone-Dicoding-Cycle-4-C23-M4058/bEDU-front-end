@@ -107,6 +107,16 @@ input {
     font-weight: 300;
 }
 
+textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .btn-acc {
     margin-top: 50px;
     width: 100%;
@@ -120,7 +130,7 @@ input {
 }
 
 .btn-acc:hover {
-    background-color: #414ec5; 
+    background-color: #414ec5;
 }
 
 .btn-del {
