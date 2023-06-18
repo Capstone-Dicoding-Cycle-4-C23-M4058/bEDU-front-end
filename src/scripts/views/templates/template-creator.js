@@ -111,13 +111,13 @@ const createArticleForm = () => `
 
       <div class="form-outline mb-4">
           <label class="form-label" for="abstract">Abstract</label>
-          <input type="text" id="abstract" class="form-control" />
+          <textarea id="abstract" rows="10" class="form-control"></textarea>
       </div>
 
-      <div class="form-outline mb-4">
-          <label class="form-label" for="description">Isi Artikel</label>
-          <input type="text" id="description" class="form-control" />
-      </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="description">Isi Artikel</label>
+        <textarea id="description" rows="10" class="form-control"></textarea>
+    </div>
 
       <div class="form-outline mb-4">
           <label class="form-label" for="label">Label</label>
@@ -133,6 +133,8 @@ const createArticleForm = () => `
           <label class="form-label" for="image">Image Tambahan Artikel</label>
           <input type="file" id="image" class="form-control btn-upl" />
       </div>
+
+      <pre id="preview"></pre>
 
       <button type="button" id="CreateArticle" class="btn btn-primary btn-acc btn-block mb-4">Create Article</button>
   </form>
@@ -282,14 +284,14 @@ const updateArticle = data => `
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="abstract">Abstract</label>
-            <input type="text" id="abstract" class="form-control" value="${data.abstract}"/>
-        </div>
+        <label class="form-label" for="abstract">Abstract</label>
+        <textarea id="abstract" rows="10" class="form-control">${data.abstract}</textarea>
+    </div>
 
-        <div class="form-outline mb-4">
-            <label class="form-label" for="description">Isi Artikel</label>
-            <input type="text" id="description" class="form-control" value="${data.description}"/>
-        </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="description">Isi Artikel</label>
+        <textarea id="description" rows="10" class="form-control">${data.description}</textarea>
+    </div>
 
         <div class="form-outline mb-4">
             <label class="form-label" for="label">Label</label>
