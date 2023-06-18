@@ -101,7 +101,7 @@ const createArticleForm = () => `
 <section class="admin"></section>
 <section class="admin">
  <div class="form-container">
-  <div class="form-wrapper">
+  <div class="form-wrapper edit-wrapper">
   <form id="CreateArticleForm" enctype="multipart/form-data">
   <h3>Create Article</h3>
       <div class="form-outline mb-4">
@@ -145,9 +145,10 @@ const createArticleForm = () => `
 `;
 
 const RegisterAdminForm = () => `
+<section class=""></section>
 <section class="admin">
 <div class="form-container">
-  <div class="form-wrapper">
+  <div class="form-wrapper regist-wrapper">
   <form id="RegisterAdminForm" enctype="multipart/form-data">
   <h3>Register Admin</h3>
   <!-- Nama input -->
@@ -183,12 +184,13 @@ const RegisterAdminForm = () => `
   </div>
   </div>
   </section>
+  <section class=""></section>
 `;
 
 const loginAdminForm = () => `
 
   <div class="form-container">
-      <div class="form-wrapper">
+      <div class="form-wrapper ">
           <form id="loginAdminForm" enctype="multipart/form-data">
           <h3>Login Admin</h3>
               <div class="form-outline mb-4">
@@ -210,7 +212,7 @@ const loginAdminForm = () => `
 const RegisterUserForm = () => `
 <section class="admin">
 <div class="form-container">
-  <div class="form-wrapper">
+  <div class="form-wrapper regist-wrapper">
   <form id="RegisterUserForm" enctype="multipart/form-data">
   <h3>Register User</h3>
   <!-- Nama input -->
@@ -273,10 +275,10 @@ const loginUserForm = () => `
 `;
 
 const updateArticle = data => `
-<section class="admin"></section>
+<section class="admin1"></section>
 <section class="admin">
 <div class="form-container edit-article">
-  <div class="form-wrapper">
+  <div class="form-wrapper edit-wrapper">
     <form id="UpdateArticleForm" enctype="multipart/form-data">
         <div class="form-outline mb-4">
             <label class="form-label" for="title">Judul Artikel</label>
@@ -315,7 +317,7 @@ const updateArticle = data => `
   </div>
   </div>
   </section>
-  <section class="admin"></section>
+  <section class="admin1"></section>
 `;
 
 export {
