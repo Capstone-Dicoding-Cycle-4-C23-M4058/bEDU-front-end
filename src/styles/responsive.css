@@ -80,6 +80,10 @@
 }
 
 @media screen and (max-width: 768px){
+    .form-wrapper {
+        max-width: 298px;
+        margin: 0;
+    }
     .BgColour {
         color: none;
         transition: none;
