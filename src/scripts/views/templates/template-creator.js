@@ -239,7 +239,7 @@ const RegisterUserForm = () => `
       <input type="password" id="passwordConfirm" class="form-control" />
   </div>
 
-  <button type="button" id="RegisterUserButton" class="btn btn-primary btn-acc btn-block mb-4">Register Admin</button>
+  <button type="button" id="RegisterUserButton" class="btn btn-primary btn-acc btn-block mb-4">Register</button>
   </form>
   </div>
   </div>
