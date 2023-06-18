@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { RegisterAdminForm } from '../../templates/template-creator';
 
@@ -49,12 +50,25 @@ const RegisterAdmin = {
         );
 
         console.log(response);
-
+        Swal.fire({
+          title: 'Register Success!',
+          text: `${response.data}`,
+          icon: 'success',
+        }).then(() => {
+          const metaTag = document.createElement('meta');
+          metaTag.setAttribute('http-equiv', 'refresh');
+          metaTag.setAttribute('content', '1;url=/#/login');
+          document.head.appendChild(metaTag);
+        });
         // Tampilkan pesan sukses atau alihkan pengguna ke halaman lain
         // sesuai dengan kebutuhan aplikasi Anda
       } catch (error) {
         // Tangani kesalahan jika ada
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `${error.message}`,
+        });
       }
     }
 
