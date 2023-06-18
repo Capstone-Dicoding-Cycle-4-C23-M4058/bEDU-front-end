@@ -18,11 +18,13 @@ const CreateArticle = {
       const labelInput = document.getElementById('label').value;
       const thumbnailInput = document.getElementById('thumbnail').files[0];
       const imageInput = document.getElementById('image').files[0];
+      const formattedValue = formatTextWithLineBreaks(descriptionInput);
+      const formattedValue1 = formatTextWithLineBreaks(abstractInput);
 
       const formData = new FormData();
       formData.append('title', titleInput);
-      formData.append('abstract', abstractInput);
-      formData.append('description', descriptionInput);
+      formData.append('abstract', formattedValue1);
+      formData.append('description', formattedValue);
       formData.append('label', labelInput);
       formData.append('thumbnail', thumbnailInput);
       formData.append('image', imageInput);
@@ -73,6 +75,10 @@ const CreateArticle = {
         }
       }
       return null;
+    }
+
+    function formatTextWithLineBreaks(text) {
+      return text.replace(/\n/g, '<br>');
     }
   },
 };
