@@ -36,7 +36,14 @@
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.edit-profile {
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
     border-radius: 8px;
 }
 
@@ -47,13 +54,14 @@
     min-height: 40vh;
   }
 
-.edit-wrapper {
-    min-width: 433px;
-}
 
-.regist-wrapper {
+/* .edit-wrapper {
     min-width: 433px;
-}
+} */
+
+/* .regist-wrapper {
+    min-width: 433px;
+} */
 
 .form-wrapper {
     max-width: 433px;
@@ -125,6 +133,30 @@ input {
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    background-color: #ffff;
+}
+
+ .form-profile .bx {
+    display: inline-block;
+    font-size: 30px;
+    margin:auto 0;
+}
+
+.form-profile {
+    display: flex;
+}
+
+.input_profile{
+    display: block;
+    height: 50px;
+    width: 100%;
+    border-radius: 0;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    border-style: none;
+    border-bottom-style: outset;
 }
 
 textarea {
@@ -151,6 +183,10 @@ textarea {
 
 .btn-acc:hover {
     background-color: #414ec5;
+}
+
+#UpdateProfile {
+    margin-top: 16px;
 }
 
 .btn-del {
