@@ -203,7 +203,7 @@ const loginAdminForm = () => `
                   <label class="form-label" for="passwordInput">Password</label>
                   <input type="password" id="passwordInput" class="form-control" />
               </div>
-
+              <p class="forgot-pass"><a href="/#/forgot-password">Forgot Password ?</a></p>
               <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
           </form>
       </div>
@@ -306,7 +306,7 @@ const loginUserForm = () => `
                   <label class="form-label" for="passwordInput">Password</label>
                   <input type="password" id="passwordInput" class="form-control" />
               </div>
-
+              <p class="forgot-pass"><a href="/#/forgot-password">Forgot Password ?</a></p>
               <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
               <p> Don't have an account? <a href="/#/register_user">Register</a></p>
           </form>
@@ -365,6 +365,7 @@ const updateArticle = data => `
         </div>
 
         <button type="button" id="UpdateArticle" class="btn btn-primary btn-acc btn-block mb-4">Update Article</button>
+        
     </form>
   </div>
   </div>
@@ -408,7 +409,7 @@ const Profiles = data => `
             <input type="text" id="role" class="form-control input_profile" value="${data.data.role}" disabled/>
             </div>
         </div>
-
+        
         <button type="button" id="UpdateProfile" class="btn btn-primary btn-acc btn-block mb-4">Update Profile</button>
     </form>
     </div>

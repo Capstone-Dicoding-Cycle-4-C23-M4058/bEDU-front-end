@@ -185,6 +185,10 @@ textarea {
     background-color: #414ec5;
 }
 
+#UpdateProfile {
+    margin-top: 16px;
+}
+
 .btn-del {
     border: none;
     background-color: rgb(197, 6, 6);
