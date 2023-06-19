@@ -79,15 +79,14 @@
                                             home.parentNode.insertBefore(createArticleBtn, home.nextSibling);
                                         }
 
-                                        let ProfileButton = document.getElementById("nav-btn6");
-                                        if (!ProfileButton) {
-                                            ProfileButton = document.createElement("a");
-                                            ProfileButton.href = "/#/profile_admin";
-                                            ProfileButton.className = "nav-btn";
-                                            ProfileButton.id = "nav-btn6";
-                                            ProfileButton.innerHTML = "Profile";
-                                            createArticleBtn.parentNode.insertBefore(ProfileButton, createArticleBtn
-                                                .nextSibling);
+                                        let profileButton = document.getElementById("nav-btn6");
+                                        if (!profileButton) {
+                                            profileButton = document.createElement("a");
+                                            profileButton.href = "/#/profile_admin";
+                                            profileButton.className = "nav-btn";
+                                            profileButton.id = "nav-btn6";
+                                            profileButton.innerHTML = "Profile";
+                                            home.parentNode.insertBefore(profileButton, createArticleBtn.nextSibling);
                                         }
 
                                         const bookmarkBtn = document.getElementById("nav-btn2");
@@ -115,6 +114,17 @@
                                     const createArticleBtn = document.getElementById("nav-btn5");
                                     if (createArticleBtn) {
                                         createArticleBtn.parentNode.removeChild(createArticleBtn);
+                                    }
+
+                                    let aboutButton = document.getElementById("nav-btn3");
+                                    let profileButton = document.getElementById("nav-btn6");
+                                    if (!profileButton) {
+                                        profileButton = document.createElement("a");
+                                        profileButton.href = "/#/profile_user";
+                                        profileButton.className = "nav-btn";
+                                        profileButton.id = "nav-btn6";
+                                        profileButton.innerHTML = "Profile";
+                                        aboutButton.parentNode.insertBefore(profileButton, aboutButton.nextSibling);
                                     }
                                 }
                             }
