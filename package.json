@@ -1,0 +1,36 @@
+{
+  "name": "bedu-front-end",
+  "version": "1.0.0",
+  "description": "Front End untuk bEDU",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "webpack serve --config webpack.dev.js",
+    "lint:fix": "npx eslint ./src --fix",
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "html-webpack-plugin": "^5.5.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.3",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-merge": "^5.9.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "idb": "^7.1.1",
+    "regenerator-runtime": "^0.13.11",
+    "sweetalert2": "^11.7.12"
+  }
+}

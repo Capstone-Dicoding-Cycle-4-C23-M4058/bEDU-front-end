@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedah Edukasi</title>
+    <link rel="manifest" href="./app.webmanifest">
+    <link rel="icon" href="./favicon.png">
+    <meta name="theme-color" content="#3e4587" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="bar-nav">
+        <!-- Nav -->
+        <div class="nav container">
+            <!-- Logo -->
+            <a href="#" class="logo"><img id="logo" src="./logo/Logo Bedu v2.png" alt="Logo Bedu"></a>
+            <!-- Drawer Btn -->
+            <nav id="drawer" class="nav">
+                <ul class="nav-list" id="navigationDrawer">
+                    <li><a href="#" class="nav-btn" id="nav-btn">Home</a></li>
+                    <li><a href="/#/favorite" class="nav-btn" id="nav-btn2">Bookmark</a></li>
+                    <li><a href="/#/about" class="nav-btn" id="nav-btn3">About</a></li>
+                    <li>
+                        <a href="#" class="nav-btn" id="nav-btn4"></a>
+                        <script>
+                            function getCookieValue(cookieName) {
+                                const cookieString = document.cookie;
+                                const cookies = cookieString.split(';');
+                                for (let i = 0; i < cookies.length; i++) {
+                                    const cookie = cookies[i].trim();
+                                    if (cookie.startsWith(`${cookieName}=`)) {
+                                        return cookie.substring(cookieName.length + 1);
+                                    }
+                                }
+                                return null;
+                            }
+
+                            function parseJwtPayload(token) {
+                                try {
+                                    const base64Url = token.split('.')[1];
+                                    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                                    const jsonPayload = atob(base64);
+                                    return JSON.parse(jsonPayload);
+                                } catch (error) {
+                                    return null;
+                                }
+                            }
+
+                            function updateNavBtn() {
+                                const bEDUCookie = getCookieValue('bEDUCookie');
+                                const parsedToken = parseJwtPayload(bEDUCookie);
+                                const navBtn = document.getElementById("nav-btn4");
+                                const home = document.getElementById("nav-btn");
+
+                                const currentRoute = window.location.hash.substring(2);
+
+                                if (!parsedToken || parsedToken.role === 'Admin') {
+                                    if (currentRoute === 'admin') {
+                                        navBtn.innerHTML = "Logout";
+                                        home.href = "/#/admin";
+                                        navBtn.href = "/#/admin";
+
+                                        // Cek apakah elemen "nav-btn5" sudah ada sebelumnya
+                                        let createArticleBtn = document.getElementById("nav-btn5");
+                                        if (!createArticleBtn) {
+                                            createArticleBtn = document.createElement("a");
+                                            createArticleBtn.href = "/#/create_article";
+                                            createArticleBtn.className = "nav-btn";
+                                            createArticleBtn.id = "nav-btn5";
+                                            createArticleBtn.innerHTML = "Create Article";
+                                            home.parentNode.insertBefore(createArticleBtn, home.nextSibling);
+                                        }
+
+                                        let profileButton = document.getElementById("nav-btn6");
+                                        if (!profileButton) {
+                                            profileButton = document.createElement("a");
+                                            profileButton.href = "/#/profile_admin";
+                                            profileButton.className = "nav-btn";
+                                            profileButton.id = "nav-btn6";
+                                            profileButton.innerHTML = "Profile";
+                                            home.parentNode.insertBefore(profileButton, createArticleBtn.nextSibling);
+                                        }
+
+                                        const bookmarkBtn = document.getElementById("nav-btn2");
+                                        if (bookmarkBtn) {
+                                            bookmarkBtn.parentNode.removeChild(bookmarkBtn);
+                                        }
+
+                                        const aboutBtn = document.getElementById("nav-btn3");
+                                        if (aboutBtn) {
+                                            aboutBtn.parentNode.removeChild(aboutBtn);
+                                        }
+                                    } else {
+                                        navBtn.innerHTML = "Login";
+
+                                        // Hapus elemen "nav-btn5" jika ada
+                                        const createArticleBtn = document.getElementById("nav-btn5");
+                                        if (createArticleBtn) {
+                                            createArticleBtn.parentNode.removeChild(createArticleBtn);
+                                        }
+                                    }
+                                } else {
+                                    navBtn.innerHTML = "Logout";
+
+                                    // Hapus elemen "nav-btn5" jika ada
+                                    const createArticleBtn = document.getElementById("nav-btn5");
+                                    if (createArticleBtn) {
+                                        createArticleBtn.parentNode.removeChild(createArticleBtn);
+                                    }
+
+                                    let aboutButton = document.getElementById("nav-btn3");
+                                    let profileButton = document.getElementById("nav-btn6");
+                                    if (!profileButton) {
+                                        profileButton = document.createElement("a");
+                                        profileButton.href = "/#/profile_user";
+                                        profileButton.className = "nav-btn";
+                                        profileButton.id = "nav-btn6";
+                                        profileButton.innerHTML = "Profile";
+                                        aboutButton.parentNode.insertBefore(profileButton, aboutButton.nextSibling);
+                                    }
+                                }
+                            }
+
+                            updateNavBtn(); // Panggil fungsi saat halaman dimuat
+
+                            // Tambahkan event listener untuk menangani perubahan URL saat halaman diperbarui
+                            window.addEventListener("hashchange", updateNavBtn);
+                            window.addEventListener("pageshow", updateNavBtn);
+                        </script>
+                    </li>
+                </ul>
+                <button class="hamburger" id="hamburgerButton">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </nav>
+        </div>
+        </div>
+    </header>
+    <main id="mainContent">
+
+    </main>
+    <!-- Footer -->
+    <div class="footer container">
+        <p>&#169; Bedah Edukasi All Right Reserved</p>
+        <div class="social">
+            <a href=""><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/Capstone-Dicoding-Cycle-4-C23-M4058"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/putra.ash/"><i class='bx bxl-instagram'></i></a>
+            <a href=""><i class='bx bxl-facebook'></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

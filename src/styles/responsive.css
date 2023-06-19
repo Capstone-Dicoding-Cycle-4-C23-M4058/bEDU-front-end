@@ -1,0 +1,243 @@
+/* Responsive */
+
+@media screen and (min-width: 455px) {
+    .about-content {
+      padding: 16px 47px;
+    }
+  
+    .about-title {
+      font-size: 28px;
+    }
+  
+    .about-description {
+      font-size: 16px;
+    }
+}
+
+  @media screen and (min-width: 650px) {
+    .about-content {
+      margin: 0 auto;
+      max-width: 650px;
+    }
+}
+
+/* @media  screen and (min-width: 769px) {
+    .artikel-space {
+        padding-top: 5rem;
+    }
+} */
+
+/* @media screen and (min-width: 835px) {
+    .artikel-space {
+        padding-top: 6rem;
+    }
+} */
+
+@media screen and (min-width: 900px) {
+    .about-articel{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-content {
+      padding: 16px 32px;
+    }
+    .hamburger {
+        display: none;
+    }
+    /* .post-content {
+        margin-top: 3rem !important;
+    } */
+} 
+
+@media screen and (max-width: 1060px){
+    .container {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .home-text {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    #select-tab {
+        align-items: center;
+    }
+    .post-container {
+        margin: 0 auto;
+        width: 90%;
+    }
+    
+    .post-content {
+        margin-top: 3rem !important;
+    }
+}
+
+@media screen and (max-width: 834px){
+    .nav {
+        padding: 14px 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .form-wrapper {
+        max-width: 298px;
+        margin: 0;
+    }
+    .BgColour {
+        color: none;
+        transition: none;
+        background-color: none;
+        border-bottom: none;
+        width: 0;
+    }
+    header {
+        position:unset;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translate(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translate(-8px) rotate(-45deg);
+    }
+
+    .nav-list {
+        position: absolute;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #23295c;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 14px;
+        height: 100;
+    }
+
+    .nav-list li {
+        margin: 16px;
+    }
+
+    .nav-list.active {
+        left: 0;
+    }
+
+    .nav {
+        padding: 10px 0;
+        min-width: 44px;
+    }
+    section {
+        padding: 2rem 0;
+    }
+    .header-content {
+        margin-top: 3rem !important;
+    }
+    .home {
+        min-height: 380px;
+    }
+    .home-title {
+        font-size: 3rem;
+    }
+    .header-title {
+        font-size: 1.8rem;
+    }
+    .header-img {
+        height: 370px;
+    }
+    .post-header {
+        height: 435px;
+    }
+}
+
+@media screen and (max-width: 603px){
+    .post-header {
+        height: 390px;
+    }
+    .header-title {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .header-img {
+        height: 340px;
+    }
+    .footer {
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width: 523px){
+    .home-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 457px){
+    .home-title {
+        font-size: 2rem;
+    }
+    .home-subtitle {
+        font-size: 0.9rem;
+    }
+    .home {
+        min-height: 300px;
+    }
+    .post-box {
+        padding: 10px;
+    }
+    .header-title {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 365px){
+    .home-title {
+        font-size: 1.8rem;
+    }
+    .home-subtitle {
+        font-size: 0.7rem;
+    }
+    .header-title {
+        width: 90%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-card .cards .card{
+      margin: 20px 0 10px 0;
+    }
+    header {
+        background-color: var(--container-color);
+    }
+}
+@media (max-width: 600px) {
+    .main-card .cards .card{
+      width: 100%;
+    }
+}
+
+@media (min-width: 888px) {
+    .main-card {
+        padding: 0 24px;
+    }
+    
+}
+
+@media (min-width: 584px) {
+    .card {
+        max-width: 280px;
+    }
+}

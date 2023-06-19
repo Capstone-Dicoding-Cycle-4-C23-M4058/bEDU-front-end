@@ -1,0 +1,188 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.table {
+    display: table;
+    border-collapse: collapse;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.article-item {
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.edit-article {
+    height: 200vh;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+  }
+
+.edit-wrapper {
+    min-width: 433px;
+}
+
+.regist-wrapper {
+    min-width: 433px;
+}
+
+.form-wrapper {
+    max-width: 433px;
+    margin: 0 30px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 14.5%);
+}
+
+/* #CreateArticleForm {
+    max-width: 300px;
+    margin: 0 100px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 14.5%);
+} */
+
+/* #loginAdminForm {
+    max-width: 300px;
+    margin: 0 100px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 14.5%);
+} */
+
+/* #RegisterAdminForm {
+    display: flex;
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0 100px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 14.5%);
+} */
+
+.form-outline {
+    display: flex;
+    flex-direction: column;
+}
+
+form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.btn-acc {
+    margin-top: 50px;
+    width: 100%;
+    background-color: var(--container-color);
+    color: var(--second-color);
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-acc:hover {
+    background-color: #414ec5;
+}
+
+.btn-del {
+    border: none;
+    background-color: rgb(197, 6, 6);
+    color: var(--second-color);
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-del:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.btn-edit {
+    border: none;
+    background-color: rgb(221, 155, 32);
+    color: var(--second-color);
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: rgb(250, 162, 0);
+}
+
+.admin-nav {
+    display: none;
+}
