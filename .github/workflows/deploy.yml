@@ -18,6 +18,7 @@ jobs:
           script: |
             cd bEDU-front-end
             rm -rf dist
+            npm run build
             git pull
             docker image prune --force
             docker system prune --all --volumes --force > /dev/null
