@@ -80,7 +80,19 @@
 }
 
 @media screen and (max-width: 768px){
+    .label-update {
+        margin-top: 18px;
+    }
+
+    #UpdateArticle {
+        margin-top: 0px;
+    }
+
     .form-wrapper {
+        max-width: 298px;
+        margin: 0;
+    }
+    .regist-wrapper {
         max-width: 298px;
         margin: 0;
     }
@@ -155,6 +167,13 @@
     .post-header {
         height: 435px;
     }
+
+    .main-card .cards .card{
+        margin: 20px 0 10px 0;
+      }
+    header {
+        background-color: var(--container-color);
+    }
 }
 
 @media screen and (max-width: 603px){
@@ -215,12 +234,17 @@
     }
 }
 
-@media (max-width: 768px) {
-    .main-card .cards .card{
-      margin: 20px 0 10px 0;
+@media (min-width: 768px) {
+    .regist-wrapper {
+        min-width: 433px;
+        margin: 0;
     }
-    header {
-        background-color: var(--container-color);
+    .edit-wrapper {
+        min-width: 433px;
+        margin: 0;
+    }
+    .edit-article {
+        min-height: 60vh;
     }
 }
 @media (max-width: 600px) {
@@ -237,6 +261,10 @@
 }
 
 @media (min-width: 584px) {
+    .profile-wrapper {
+        min-width: 433px;
+        margin: 0;
+    }
     .card {
         max-width: 280px;
     }
