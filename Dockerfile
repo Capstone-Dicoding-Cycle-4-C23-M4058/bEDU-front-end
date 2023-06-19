@@ -17,11 +17,11 @@ RUN npm install
 # Menyalin sumber kode aplikasi
 COPY . .
 
-# Membangun aplikasi
-RUN npm run build
-
 # Menyalin folder dist
 COPY dist/ ./dist/
+
+# Membangun aplikasi
+RUN npm run build
 
 # Menginstal http-server sebagai dependensi global
 RUN npm install -g http-server
