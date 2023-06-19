@@ -36,7 +36,14 @@
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.edit-profile {
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
     border-radius: 8px;
 }
 
@@ -47,13 +54,14 @@
     min-height: 40vh;
   }
 
-.edit-wrapper {
-    min-width: 433px;
-}
 
-.regist-wrapper {
+/* .edit-wrapper {
     min-width: 433px;
-}
+} */
+
+/* .regist-wrapper {
+    min-width: 433px;
+} */
 
 .form-wrapper {
     max-width: 433px;
