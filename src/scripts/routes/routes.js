@@ -15,6 +15,8 @@ import VerifyEmail from '../views/pages/user/verifyemail';
 import ForgotPassword from '../views/pages/forgot_password';
 import ChangePasswordForm from '../views/pages/user/change-password';
 import ChangePasswordAdminForm from '../views/pages/admin/change-password';
+import ProfilesAdmin from '../views/pages/admin/profil-admin';
+import ProfilesUser from '../views/pages/user/profile-user';
 
 const routes = {
   '/': showCard, // default page
@@ -33,6 +35,8 @@ const routes = {
   '/verify_user/:id': VerifyEmail,
   '/verify_email/:id': VerifyEmail,
   '/forgot-password': ForgotPassword,
+  '/profile_admin': ProfilesAdmin,
+  '/profile_user': ProfilesUser,
   '/change-password_user/:id': ChangePasswordForm,
   '/change-password_admin/:id': ChangePasswordAdminForm,
   '/admin': AdminPage,
