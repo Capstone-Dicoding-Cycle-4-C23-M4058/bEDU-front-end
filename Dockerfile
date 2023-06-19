@@ -1,6 +1,10 @@
 # Menggunakan image base yang sesuai dengan kebutuhan Anda
 FROM node:14-alpine
 
+RUN apk update && apk add git
+
+RUN apk add --no-cache nginx
+
 # Mengatur direktori kerja dalam kontainer
 WORKDIR /app
 
@@ -16,5 +20,15 @@ COPY . .
 # Membangun aplikasi
 RUN npm run build
 
+# Menyalin folder dist
+COPY dist/ ./dist/
+
+# Menginstal http-server sebagai dependensi global
+RUN npm install -g http-server
+
+# Mengatur port yang akan digunakan
+ENV PORT=443
+EXPOSE 443
+
 # Mengatur perintah yang akan dijalankan ketika kontainer berjalan
-CMD ["npm", "serve"]
+CMD ["http-server", "dist", "-S", "-C", "/etc/nginx/ssl/fullchain.pem", "-K", "/etc/nginx/ssl/privkey.pem"]

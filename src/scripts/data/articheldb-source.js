@@ -86,6 +86,46 @@ class ArtichelDbSource {
     }
   }
 
+  static async verifyEmailAdmin(verificationCode) {
+    try {
+      
+      const response = await fetch(API_ENDPOINT.VERIFY_ADMIN(verificationCode), {
+        method: 'GET',
+      });
+  
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+  
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async verifyEmailUser(verificationCode) {
+    try {
+      const url = API_ENDPOINT.VERIFY_USER(verificationCode);
+      console.log(url);
+      
+      const response = await fetch(url, {
+        method: 'GET',
+      });
+  
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+  
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   static async logoutUser(token) {
     try {
       const response = await fetch(API_ENDPOINT.LOGOUT_USER, {
@@ -154,6 +194,89 @@ class ArtichelDbSource {
 
       const responseData = await response.clone().json();
       document.cookie = `bEDUCookie=${responseData.data.token}; path=/`;
+      console.log(responseData.message);
+      return responseData;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async forgotPassword(email) {
+    try {
+      const data = {
+        email,
+      };
+
+      const response = await fetch(API_ENDPOINT.FORGOT_PASSWORD, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+
+      const responseData = await response.clone().json();
+      console.log(responseData.message);
+      return responseData;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async getOTP(OTP, password, passwordConfirm) {
+    try {
+      const data = {
+        password,
+        passwordConfirm,
+      };
+
+      const response = await fetch(API_ENDPOINT.GET_OTP(OTP), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+
+      const responseData = await response.clone().json();
+      console.log(responseData.message);
+      return responseData;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async getOTPAdmin(OTP, password, passwordConfirm) {
+    try {
+      const data = {
+        password,
+        passwordConfirm,
+      };
+
+      const response = await fetch(API_ENDPOINT.GET_OTP_ADMIN(OTP), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+
+      const responseData = await response.clone().json();
       console.log(responseData.message);
       return responseData;
     } catch (error) {
