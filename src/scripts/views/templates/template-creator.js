@@ -203,10 +203,8 @@ const loginAdminForm = () => `
                   <label class="form-label" for="passwordInput">Password</label>
                   <input type="password" id="passwordInput" class="form-control" />
               </div>
-
+              <p class="forgot-pass"><a href="/#/forgot-password">Forgot Password ?</a></p>
               <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
-              <p> Don't have an account? <a href="/#/register">Register</a></p>
-              <p> Cannot login? <a href="/#/forgot-password">Forgot Password</a></p>
           </form>
       </div>
   </div>
@@ -308,10 +306,9 @@ const loginUserForm = () => `
                   <label class="form-label" for="passwordInput">Password</label>
                   <input type="password" id="passwordInput" class="form-control" />
               </div>
-
+              <p class="forgot-pass"><a href="/#/forgot-password">Forgot Password ?</a></p>
               <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
               <p> Don't have an account? <a href="/#/register_user">Register</a></p>
-              <p> Cannot login? <a href="/#/forgot-password">Forgot Password</a></p>
           </form>
       </div>
   </div>
@@ -336,38 +333,39 @@ const updateArticle = data => `
   <div class="form-wrapper edit-wrapper">
     <form id="UpdateArticleForm" enctype="multipart/form-data">
         <div class="form-outline mb-4">
-            <label class="form-label" for="title">Judul Artikel</label>
+            <label class="form-label label-update" for="title">Judul Artikel</label>
             <input type="text" id="title" class="form-control" value="${data.title}"/>
         </div>
 
         <div class="form-outline mb-4">
-        <label class="form-label" for="abstract">Abstract</label>
+        <label class="form-label label-update" for="abstract">Abstract</label>
         <textarea id="abstract" rows="10" class="form-control">${data.abstract}</textarea>
     </div>
 
     <div class="form-outline mb-4">
-        <label class="form-label" for="description">Isi Artikel</label>
+        <label class="form-label label-update" for="description">Isi Artikel</label>
         <textarea id="description" rows="10" class="form-control">${data.description}</textarea>
     </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="label">Label</label>
+            <label class="form-label label-update" for="label">Label</label>
             <input type="text" id="label" class="form-control" value="${data.label}"/>
         </div>
 
         <div class="form-outline mb-4">
-        <label class="form-label" for="thumbnail">Thumbnail Artikel</label>
+        <label class="form-label label-update" for="thumbnail">Thumbnail Artikel</label>
         <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
             <input type="file" id="thumbnail" class="form-control" />
         </div>
 
         <div class="form-outline mb-4">
-        <label class="form-label" for="image">Image Tambahan Artikel</label>
+        <label class="form-label label-update" for="image">Image Tambahan Artikel</label>
         <img src="${data.image}" alt="${data.title}" class="post-img">
             <input type="file" id="image" class="form-control" />
         </div>
 
         <button type="button" id="UpdateArticle" class="btn btn-primary btn-acc btn-block mb-4">Update Article</button>
+        
     </form>
   </div>
   </div>
@@ -376,37 +374,47 @@ const updateArticle = data => `
 `;
 
 const Profiles = data => `
-<section class="admin"></section>
 <section class="admin">
-<div class="form-container edit-article">
-  <div class="form-wrapper">
+<div class="form-container edit-profile">
+  <div class="form-wrapper profile-wrapper">
     <form id="UpdateArticleForm" enctype="multipart/form-data">
         <div class="form-outline mb-4">
             <label class="form-label" for="title">Nama Lengkap</label>
-            <input type="text" id="nama" class="form-control" value="${data.data.nama}"/>
+            <div class="form-profile">
+            <i class='bx bxs-user user-bx' ></i>
+            <input type="text" id="nama" class="form-control input_profile" value="${data.data.nama}"/>
+            </div>
         </div>
 
         <div class="form-outline mb-4">
         <label class="form-label" for="abstract">Username</label>
-        <input type="text" id="username" class="form-control" value="${data.data.username}"/>
+        <div class="form-profile">
+        <i class='bx bx-user' ></i>
+        <input type="text" id="username" class="form-control input_profile" value="${data.data.username}"/>
+        </div>
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="description">Email</label>
-        <input type="email" id="email" class="form-control" value="${data.data.email}"/>
+        <div class="form-profile">
+        <i class='bx bx-envelope' ></i>
+        <input type="email" id="email" class="form-control input_profile" value="${data.data.email}"/>
+        </div>
     </div>
 
         <div class="form-outline mb-4">
             <label class="form-label" for="label">Role</label>
-            <input type="text" id="role" class="form-control" value="${data.data.role}"/>
+            <div class="form-profile">
+            <i class='bx bx-id-card'></i>
+            <input type="text" id="role" class="form-control input_profile" value="${data.data.role}" disabled/>
+            </div>
         </div>
-
+        
         <button type="button" id="UpdateProfile" class="btn btn-primary btn-acc btn-block mb-4">Update Profile</button>
     </form>
     </div>
     </div>
     </section>
-    <section class="admin"></section>
 `;
 
 export {
