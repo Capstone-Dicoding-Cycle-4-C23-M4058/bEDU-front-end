@@ -209,6 +209,46 @@ const loginAdminForm = () => `
       </div>
   </div>
 `;
+
+const formChangePasswordOTP = () => `
+
+  <div class="form-container">
+      <div class="form-wrapper">
+          <form id="loginAdminForm" enctype="multipart/form-data">
+          <h3>Change Password OTP</h3>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="emailInput">New Password</label>
+                  <input type="password" id="password" class="form-control" />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="passwordInput">Confirm Password</label>
+                  <input type="password" id="passwordConfirm" class="form-control" />
+              </div>
+
+              <button type="button" id="changePassword" class="btn btn-primary btn-acc btn-block mb-4">Change Password</button>
+          </form>
+      </div>
+  </div>
+`;
+
+const formForgotPassword = () => `
+
+  <div class="form-container">
+      <div class="form-wrapper">
+          <form id="loginAdminForm" enctype="multipart/form-data">
+          <h3>Forgot Password</h3>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="emailInput">Email</label>
+                  <input type="email" id="emailforgot" class="form-control" />
+              </div>
+              <button type="button" id="forgotPassword" class="btn btn-primary btn-acc btn-block mb-4">Submit</button>
+          </form>
+      </div>
+  </div>
+`;
+
 const RegisterUserForm = () => `
 <section class="admin">
 <div class="form-container">
@@ -274,6 +314,18 @@ const loginUserForm = () => `
   </div>
 `;
 
+const verifyemail = () => `
+<div class="form-container">
+      <div class="form-wrapper">
+          <form id="loginUser" enctype="multipart/form-data">
+          <h3>Verify Email</h3>
+             <p id="status_verify"></p>
+             <p><a href="/#/login_user">Login Here</a></p>
+          </form>
+      </div>
+  </div>
+`;
+
 const updateArticle = data => `
 <section class="admin1"></section>
 <section class="admin">
@@ -321,6 +373,9 @@ const updateArticle = data => `
 `;
 
 export {
+  formChangePasswordOTP,
+  formForgotPassword,
+  verifyemail,
   createTemplateAdminArticle,
   updateArticle,
   RegisterAdminForm,

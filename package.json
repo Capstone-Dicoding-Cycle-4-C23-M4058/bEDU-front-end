@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "lint:fix": "npx eslint ./src --fix",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
+    "http-server": "^14.1.1",
     "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.11",
     "sweetalert2": "^11.7.12"
