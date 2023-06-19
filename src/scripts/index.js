@@ -28,6 +28,7 @@ function scrollValue() {
   const btn3 = document.getElementById('nav-btn3');
   const btn4 = document.getElementById('nav-btn4');
   const btn5 = document.getElementById('nav-btn5');
+  const btn6 = document.getElementById('nav-btn6');
   const scroll = window.scrollY;
 
   if (scroll < 350) {
@@ -52,6 +53,9 @@ function scrollValue() {
     if (btn5) {
       btn5.style.color = 'var(--bg-color)';
     }
+    if (btn6) {
+      btn6.style.color = 'var(--bg-color)';
+    }
   } else {
     if (scrollImage) {
       scrollImage.setAttribute('src', './logo/Logo Bedu.png');
@@ -73,6 +77,9 @@ function scrollValue() {
     }
     if (btn5) {
       btn5.style.color = 'var(--container-color)';
+    }
+    if (btn6) {
+      btn6.style.color = 'var(--container-color)';
     }
   }
 }
