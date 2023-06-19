@@ -23,7 +23,6 @@ RUN npm run build
 # Menyalin folder dist
 COPY dist/ ./dist/
 
-
 # Menginstal http-server sebagai dependensi global
 RUN npm install -g http-server
 
