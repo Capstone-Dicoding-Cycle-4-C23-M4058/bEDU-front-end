@@ -246,6 +246,10 @@
     .edit-article {
         min-height: 60vh;
     }
+    .profile-wrapper {
+        min-width: 433px;
+        margin: 0;
+    }
 }
 @media (max-width: 600px) {
     .main-card .cards .card{
