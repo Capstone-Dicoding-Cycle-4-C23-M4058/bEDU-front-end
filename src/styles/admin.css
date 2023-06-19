@@ -135,6 +135,29 @@ input {
     font-weight: 300;
 }
 
+ .form-profile .bx {
+    display: inline-block;
+    font-size: 30px;
+    margin:auto 0;
+}
+
+.form-profile {
+    display: flex;
+}
+
+.input_profile{
+    display: block;
+    height: 50px;
+    width: 100%;
+    border-radius: 0;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    border-style: none;
+    border-bottom-style: outset;
+}
+
 textarea {
     display: block;
     width: 100%;

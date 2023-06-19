@@ -379,22 +379,34 @@ const Profiles = data => `
     <form id="UpdateArticleForm" enctype="multipart/form-data">
         <div class="form-outline mb-4">
             <label class="form-label" for="title">Nama Lengkap</label>
-            <input type="text" id="nama" class="form-control" value="${data.data.nama}"/>
+            <div class="form-profile">
+            <i class='bx bxs-user user-bx' ></i>
+            <input type="text" id="nama" class="form-control input_profile" value="${data.data.nama}"/>
+            </div>
         </div>
 
         <div class="form-outline mb-4">
         <label class="form-label" for="abstract">Username</label>
-        <input type="text" id="username" class="form-control" value="${data.data.username}"/>
+        <div class="form-profile">
+        <i class='bx bx-user' ></i>
+        <input type="text" id="username" class="form-control input_profile" value="${data.data.username}"/>
+        </div>
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="description">Email</label>
-        <input type="email" id="email" class="form-control" value="${data.data.email}"/>
+        <div class="form-profile">
+        <i class='bx bx-envelope' ></i>
+        <input type="email" id="email" class="form-control input_profile" value="${data.data.email}"/>
+        </div>
     </div>
 
         <div class="form-outline mb-4">
             <label class="form-label" for="label">Role</label>
-            <input type="text" id="role" class="form-control" value="${data.data.role}"/>
+            <div class="form-profile">
+            <i class='bx bx-id-card'></i>
+            <input type="text" id="role" class="form-control input_profile" value="${data.data.role}"disabled/>
+            </div>
         </div>
 
         <button type="button" id="UpdateProfile" class="btn btn-primary btn-acc btn-block mb-4">Update Profile</button>
