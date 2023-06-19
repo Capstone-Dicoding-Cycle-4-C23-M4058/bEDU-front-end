@@ -205,8 +205,6 @@ const loginAdminForm = () => `
               </div>
 
               <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
-              <p> Don't have an account? <a href="/#/register">Register</a></p>
-              <p> Cannot login? <a href="/#/forgot-password">Forgot Password</a></p>
           </form>
       </div>
   </div>
@@ -311,7 +309,6 @@ const loginUserForm = () => `
 
               <button type="button" id="signInBtn" class="btn btn-primary btn-acc btn-block mb-4">Sign in</button>
               <p> Don't have an account? <a href="/#/register_user">Register</a></p>
-              <p> Cannot login? <a href="/#/forgot-password">Forgot Password</a></p>
           </form>
       </div>
   </div>
@@ -408,7 +405,7 @@ const Profiles = data => `
             <label class="form-label" for="label">Role</label>
             <div class="form-profile">
             <i class='bx bx-id-card'></i>
-            <input type="text" id="role" class="form-control input_profile" value="${data.data.role}"disabled/>
+            <input type="text" id="role" class="form-control input_profile" value="${data.data.role}" disabled/>
             </div>
         </div>
 
