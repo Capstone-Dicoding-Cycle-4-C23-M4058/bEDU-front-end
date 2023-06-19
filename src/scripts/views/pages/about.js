@@ -64,16 +64,16 @@ const About = {
           <div class="card">
             <div class="content">
               <div class="img">
-               <img src="/img/profile1.png" alt="AlMalik Ashraf">
+               <img src="/img/profile1.jpg" alt="AlMalik Ashraf">
               </div>
               <div class="details">
                 <div class="name">AlMalik Ashraf</div>
                 <div class="job">UI</div>
               </div>
               <div class="media-icons">
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/malikkashraf/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/srafmalik04/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/maliqessentials"><i class='bx bxl-github'></i></a>
               </div>
             </div>
            </div>
@@ -87,9 +87,9 @@ const About = {
                <div class="job">UX</div>
              </div>
              <div class="media-icons">
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/ferdian_drmpt/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/ferdian-darma-21a89127b/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/FerdiaDarma"><i class='bx bxl-github'></i></a>
              </div>
            </div>
           </div>

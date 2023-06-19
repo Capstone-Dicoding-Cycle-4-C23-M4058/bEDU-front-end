@@ -11,6 +11,10 @@ import RegisterAdmin from '../views/pages/admin/register';
 import EditArticle from '../views/pages/admin/edit_article';
 import UserForm from '../views/pages/user/login';
 import RegisterUser from '../views/pages/user/register';
+import VerifyEmail from '../views/pages/user/verifyemail';
+import ForgotPassword from '../views/pages/forgot_password';
+import ChangePasswordForm from '../views/pages/user/change-password';
+import ChangePasswordAdminForm from '../views/pages/admin/change-password';
 
 const routes = {
   '/': showCard, // default page
@@ -26,6 +30,11 @@ const routes = {
   '/register': RegisterAdmin,
   '/create_article': CreateArticle,
   '/edit_article/:id': EditArticle,
+  '/verify_user/:id': VerifyEmail,
+  '/verify_email/:id': VerifyEmail,
+  '/forgot-password': ForgotPassword,
+  '/change-password_user/:id': ChangePasswordForm,
+  '/change-password_admin/:id': ChangePasswordAdminForm,
   '/admin': AdminPage,
 };
 
