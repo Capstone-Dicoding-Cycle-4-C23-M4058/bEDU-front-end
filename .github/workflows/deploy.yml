@@ -17,6 +17,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd bEDU-front-end
+            rm -rf dist
             nvm install 16.20.0
             npm run build
             git pull
