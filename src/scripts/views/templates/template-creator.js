@@ -370,20 +370,55 @@ const updateArticle = data => `
   <section class="admin"></section>
 `;
 
+const Profiles = data => `
+<section class="admin"></section>
+<section class="admin">
+<div class="form-container edit-article">
+  <div class="form-wrapper">
+    <form id="UpdateArticleForm" enctype="multipart/form-data">
+        <div class="form-outline mb-4">
+            <label class="form-label" for="title">Nama Lengkap</label>
+            <input type="text" id="nama" class="form-control" value="${data.data.nama}"/>
+        </div>
+
+        <div class="form-outline mb-4">
+        <label class="form-label" for="abstract">Username</label>
+        <input type="text" id="username" class="form-control" value="${data.data.username}"/>
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="description">Email</label>
+        <input type="email" id="email" class="form-control" value="${data.data.email}"/>
+    </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label" for="label">Role</label>
+            <input type="text" id="role" class="form-control" value="${data.data.role}"/>
+        </div>
+
+        <button type="button" id="UpdateProfile" class="btn btn-primary btn-acc btn-block mb-4">Update Profile</button>
+    </form>
+    </div>
+    </div>
+    </section>
+    <section class="admin"></section>
+`;
+
 export {
-  formChangePasswordOTP,
-  formForgotPassword,
-  verifyemail,
-  createTemplateAdminArticle,
-  updateArticle,
-  RegisterAdminForm,
-  loginAdminForm,
-  loginUserForm,
-  RegisterUserForm,
-  createArticleForm,
-  createDetailArtichel,
-  createTemplateArtichel,
-  createSindoArtichel,
-  createLikeButtonTemplate,
-  createUnlikeButtonTemplate,
+    Profiles,
+    formChangePasswordOTP,
+    formForgotPassword,
+    verifyemail,
+    createTemplateAdminArticle,
+    updateArticle,
+    RegisterAdminForm,
+    loginAdminForm,
+    loginUserForm,
+    RegisterUserForm,
+    createArticleForm,
+    createDetailArtichel,
+    createTemplateArtichel,
+    createSindoArtichel,
+    createLikeButtonTemplate,
+    createUnlikeButtonTemplate,
 };

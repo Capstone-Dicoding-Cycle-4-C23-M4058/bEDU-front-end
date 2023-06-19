@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class ArtichelDbSource {
@@ -88,11 +89,52 @@ class ArtichelDbSource {
 
   static async verifyEmailAdmin(verificationCode) {
     try {
-      
       const response = await fetch(API_ENDPOINT.VERIFY_ADMIN(verificationCode), {
         method: 'GET',
       });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
   
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async ProfileAdmin(token) {
+    try {
+      const response = await fetch(API_ENDPOINT.PROFILE_ADMIN, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+  
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async ProfileUser(token) {
+    try {
+      const response = await fetch(API_ENDPOINT.PROFILE_USER, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       if (!response.ok) {
         const responseJson = await response.json();
         throw new Error(responseJson.errors);
@@ -142,6 +184,50 @@ class ArtichelDbSource {
 
       // Menghapus cookie bEDUCookie
       document.cookie = 'bEDUCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async updateProfileAdmin(formData, IdAdmin, token) {
+    try {
+      const response = await fetch(API_ENDPOINT.EDIT_ADMIN(IdAdmin), {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async updateProfilUser(formData, IdUser, token) {
+    try {
+      const response = await fetch(API_ENDPOINT.EDIT_USER(IdUser), {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
 
       const responseJson = await response.json();
       return responseJson;

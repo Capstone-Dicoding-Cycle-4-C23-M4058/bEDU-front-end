@@ -16,6 +16,7 @@ const VerifyEmail = {
     try {
       const response = await ArtichelDbSource.verifyEmailAdmin(uniqueCode);
       MessageStatus.textContent = 'Status berhasil diverifikasi.';
+      console.log(response);
     } catch (error) {
       Swal.fire({
         icon: 'error',

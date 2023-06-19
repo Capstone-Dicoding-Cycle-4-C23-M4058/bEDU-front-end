@@ -79,6 +79,17 @@
                                             home.parentNode.insertBefore(createArticleBtn, home.nextSibling);
                                         }
 
+                                        let ProfileButton = document.getElementById("nav-btn6");
+                                        if (!ProfileButton) {
+                                            ProfileButton = document.createElement("a");
+                                            ProfileButton.href = "/#/profile_admin";
+                                            ProfileButton.className = "nav-btn";
+                                            ProfileButton.id = "nav-btn6";
+                                            ProfileButton.innerHTML = "Profile";
+                                            createArticleBtn.parentNode.insertBefore(ProfileButton, createArticleBtn
+                                                .nextSibling);
+                                        }
+
                                         const bookmarkBtn = document.getElementById("nav-btn2");
                                         if (bookmarkBtn) {
                                             bookmarkBtn.parentNode.removeChild(bookmarkBtn);
