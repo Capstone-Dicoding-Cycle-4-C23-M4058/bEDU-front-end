@@ -11,7 +11,6 @@ const ChangePasswordForm = {
     // Mendapatkan elemen tombol login
 const ChangePasswordButton = document.getElementById('changePassword');
 
-
 // Menambahkan event listener untuk event "click" pada tombol login
 ChangePasswordButton.addEventListener('click', () => {
     ChangePassword();
