@@ -417,7 +417,35 @@ const Profiles = data => `
     </section>
 `;
 
+const formChangePassword = () => `
+  <div class="form-container">
+      <div class="form-wrapper">
+          <form id="formChangePassword" enctype="multipart/form-data">
+          <h3>Change Password</h3>
+            <div class="form-outline mb-4">
+                  <label class="form-label" for="emailInput">Old Password</label>
+                  <input type="password" id="oldpassword" class="form-control" />
+              </div>
+
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="emailInput">New Password</label>
+                  <input type="password" id="password" class="form-control" />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="passwordInput">Confirm Password</label>
+                  <input type="password" id="passwordConfirm" class="form-control" />
+              </div>
+
+              <button type="button" id="changePassword" class="btn btn-primary btn-acc btn-block mb-4">Change Password</button>
+          </form>
+      </div>
+  </div>
+`;
+
 export {
+    formChangePassword,
     Profiles,
     formChangePasswordOTP,
     formForgotPassword,
