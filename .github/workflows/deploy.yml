@@ -18,7 +18,10 @@ jobs:
           script: |
             cd bEDU-front-end
             rm -rf dist
-            git pull
+            git pull origin prod
+            nvm install 16.20.0
+            npm run build
+            git stash
             docker image prune --force
             docker system prune --all --volumes --force > /dev/null
             docker-compose down && docker-compose up --build --force-recreate --no-deps -d
