@@ -14,7 +14,7 @@ const NavbarEdited = {
 
         if (!parsedToken || parsedToken.role === 'Admin') {
             // eslint-disable-next-line no-constant-condition
-            if (currentRoute === 'admin' || currentRoute === 'create_article' || currentRoute === 'profile_admin') {
+            if (currentRoute === 'admin' || currentRoute === 'create_article' || currentRoute === 'profile_admin' || currentRoute === 'change-password_admin') {
                 navBtn.innerHTML = "Logout";
                 home.href = "/#/admin";
                 navBtn.href = "/#/admin";
@@ -38,6 +38,14 @@ const NavbarEdited = {
                     profileButton.id = "nav-btn6";
                     profileButton.innerHTML = "Profile";
                     home.parentNode.insertBefore(profileButton, createArticleBtn.nextSibling);
+                }
+
+                if (currentRoute === 'profile_admin') {
+                    profileButton.href = "/#/change-password_admin";
+                    profileButton.innerHTML = "Change Password";
+                } else {
+                    profileButton.href = "/#/profile_admin";
+                    profileButton.innerHTML = "Profile";
                 }
 
                 const bookmarkBtn = document.getElementById("nav-btn2");
@@ -76,6 +84,14 @@ const NavbarEdited = {
                 profileButton.id = "nav-btn6";
                 profileButton.innerHTML = "Profile";
                 aboutButton.parentNode.insertBefore(profileButton, aboutButton.nextSibling);
+            }
+
+            if (currentRoute === 'profile_user') {
+                profileButton.href = "/#/change-password_user";
+                profileButton.innerHTML = "Change Password";
+            } else {
+                profileButton.href = "/#/profile_user";
+                profileButton.innerHTML = "Profile";
             }
         }
     },
