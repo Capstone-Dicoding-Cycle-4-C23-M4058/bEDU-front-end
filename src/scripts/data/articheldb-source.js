@@ -214,6 +214,50 @@ class ArtichelDbSource {
     }
   }
 
+  static async ChangePasswordAdmin(formData, token) {
+    try {
+      const response = await fetch(API_ENDPOINT.CHANGE_PASSWORD_ADMIN, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  static async ChangePasswordUser(formData, token) {
+    try {
+      const response = await fetch(API_ENDPOINT.CHANGE_PASSWORD_USER, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const responseJson = await response.json();
+        throw new Error(responseJson.errors);
+      }
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   static async updateProfilUser(formData, token) {
     try {
       const response = await fetch(API_ENDPOINT.EDIT_USER, {
