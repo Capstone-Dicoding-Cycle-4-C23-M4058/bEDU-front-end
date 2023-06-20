@@ -1,5 +1,4 @@
 import Swal from 'sweetalert2';
-import UrlParser from '../../../routes/url-parser';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { Profiles } from '../../templates/template-creator';
 
@@ -8,7 +7,7 @@ const ProfilesAdmin = {
     const nav = document.getElementById('bar-nav');
     nav.classList.add('admin-nav');
     return `
-          <div class="post-detail"></div>
+      <div class="post-detail"></div>
         `;
   },
 
@@ -35,7 +34,6 @@ const ProfilesAdmin = {
       console.log(response);
       const Container = document.querySelector('.post-detail');
       Container.innerHTML = Profiles(response);
-      console.log(response.data.nama);
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -43,9 +41,6 @@ const ProfilesAdmin = {
         text: error.message,
       });
     }
-
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const IdAdmin = url.id;
 
     const UpdateProfileButton = document.getElementById('UpdateProfile');
     UpdateProfileButton.addEventListener('click', async () => {
@@ -64,21 +59,18 @@ const ProfilesAdmin = {
           // Kirim data artikel ke backend menggunakan ArtichelDbSource
           const response = await ArtichelDbSource.updateProfileAdmin(
             formData,
-            IdAdmin,
             bEDUCookie);
-
             console.log(response);
-
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Edit Article Success!',
+              title: 'Edit Profile Success!',
               showConfirmButton: false,
               timer: 1500,
             }).then(() => {
               const metaTag = document.createElement('meta');
               metaTag.setAttribute('http-equiv', 'refresh');
-              metaTag.setAttribute('content', '1;url=/#/admin');
+              metaTag.setAttribute('content', '1;url=/#/profile_admin');
               document.head.appendChild(metaTag);
             });
           // Tampilkan pesan sukses atau alihkan pengguna ke halaman lain
