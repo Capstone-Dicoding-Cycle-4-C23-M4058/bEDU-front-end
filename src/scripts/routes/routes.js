@@ -17,6 +17,8 @@ import ChangePasswordForm from '../views/pages/user/change-password';
 import ChangePasswordAdminForm from '../views/pages/admin/change-password';
 import ProfilesAdmin from '../views/pages/admin/profil-admin';
 import ProfilesUser from '../views/pages/user/profile-user';
+import ChangePasswordAdmin from '../views/pages/admin/change_password';
+import ChangePasswordUser from '../views/pages/user/change_password';
 
 const routes = {
   '/': showCard, // default page
@@ -39,6 +41,8 @@ const routes = {
   '/profile_user': ProfilesUser,
   '/change-password_user/:id': ChangePasswordForm,
   '/change-password_admin/:id': ChangePasswordAdminForm,
+  '/change-password_admin': ChangePasswordAdmin,
+  '/change-password_user': ChangePasswordUser,
   '/admin': AdminPage,
 };
 
