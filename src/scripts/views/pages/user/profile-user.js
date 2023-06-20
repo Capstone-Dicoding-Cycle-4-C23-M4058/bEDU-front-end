@@ -1,5 +1,4 @@
 import Swal from 'sweetalert2';
-import UrlParser from '../../../routes/url-parser';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { Profiles } from '../../templates/template-creator';
 
@@ -43,9 +42,6 @@ const ProfilesUser = {
       });
     }
 
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const idUser = url.id;
-
     const UpdateProfileButton = document.getElementById('UpdateProfile');
     UpdateProfileButton.addEventListener('click', async () => {
         const namaInput = document.getElementById('nama').value;
@@ -63,7 +59,6 @@ const ProfilesUser = {
           // Kirim data artikel ke backend menggunakan ArtichelDbSource
           const response = await ArtichelDbSource.updateProfilUser(
             formData,
-            idUser,
             bEDUCookie);
 
             console.log(response);
@@ -71,13 +66,13 @@ const ProfilesUser = {
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Edit Article Success!',
+              title: 'Edit Profile Success!',
               showConfirmButton: false,
               timer: 1500,
             }).then(() => {
               const metaTag = document.createElement('meta');
               metaTag.setAttribute('http-equiv', 'refresh');
-              metaTag.setAttribute('content', '1;url=/#/admin');
+              metaTag.setAttribute('content', '1;url=/#/profile_user');
               document.head.appendChild(metaTag);
             });
           // Tampilkan pesan sukses atau alihkan pengguna ke halaman lain

@@ -1,4 +1,5 @@
-function getCookieValue(cookieName) {
+const Cookie = {
+  getCookieValue(cookieName) {
     const cookieString = document.cookie;
     const cookies = cookieString.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -8,9 +9,9 @@ function getCookieValue(cookieName) {
       }
     }
     return null;
-  }
+  },
 
-  function parseJwtPayload(token) {
+  parseJwtPayload(token) {
     try {
       const base64Url = token.split('.')[1];
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -19,4 +20,7 @@ function getCookieValue(cookieName) {
     } catch (error) {
       return null;
     }
-  }
+  },
+};
+
+export default Cookie;

@@ -406,7 +406,7 @@ const Profiles = data => `
             <label class="form-label" for="label">Role</label>
             <div class="form-profile">
             <i class='bx bx-id-card'></i>
-            <input type="text" id="role" class="form-control input_profile" value="${data.data.role}" disabled/>
+            <input type="text" id="role" class="form-control input_profile" value="${data.data.role}"/>
             </div>
         </div>
         

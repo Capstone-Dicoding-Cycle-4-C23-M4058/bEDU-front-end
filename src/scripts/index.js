@@ -4,6 +4,7 @@ import '../styles/responsive.css';
 import '../styles/admin.css';
 import '../styles/user.css';
 import App from './views/app';
+import './utils/navbar';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

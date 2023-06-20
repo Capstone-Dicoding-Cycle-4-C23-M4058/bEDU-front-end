@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2';
 import ArtichelDbSource from '../../../data/articheldb-source';
 import { createArticleForm } from '../../templates/template-creator';
+import Cookie from '../../../utils/cookie';
 
 const CreateArticle = {
   async render() {
@@ -10,6 +11,20 @@ const CreateArticle = {
   },
 
   async afterRender() {
+    const bEDUCookie = Cookie.getCookieValue('bEDUCookie');
+    if (!bEDUCookie) {
+      // Jika cookie "bEDUCookie" tidak ditemukan, redirect ke halaman login
+      window.location.href = '/#/login';
+      return;
+    }
+
+    const parsedToken = Cookie.parseJwtPayload(bEDUCookie);
+    if (!parsedToken || parsedToken.role !== 'Admin') {
+      // Jika token tidak valid atau role bukan admin, redirect ke halaman login
+      window.location.href = '/#/login';
+      return;
+    }
+
     const createArticleButton = document.getElementById('CreateArticle');
     createArticleButton.addEventListener('click', async () => {
       const titleInput = document.getElementById('title').value;
@@ -30,7 +45,6 @@ const CreateArticle = {
       formData.append('image', imageInput);
 
       try {
-        const bEDUCookie = getCookieValue('bEDUCookie');
         console.log(bEDUCookie);
 
         if (bEDUCookie) {
