@@ -192,9 +192,9 @@ class ArtichelDbSource {
     }
   }
 
-  static async updateProfileAdmin(formData, IdAdmin, token) {
+  static async updateProfileAdmin(formData, token) {
     try {
-      const response = await fetch(API_ENDPOINT.EDIT_ADMIN(IdAdmin), {
+      const response = await fetch(API_ENDPOINT.EDIT_ADMIN, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -214,9 +214,9 @@ class ArtichelDbSource {
     }
   }
 
-  static async updateProfilUser(formData, IdUser, token) {
+  static async updateProfilUser(formData, token) {
     try {
-      const response = await fetch(API_ENDPOINT.EDIT_USER(IdUser), {
+      const response = await fetch(API_ENDPOINT.EDIT_USER, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
