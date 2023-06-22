@@ -11,7 +11,7 @@ const VerifyEmail = {
     const MessageStatus = document.getElementById('status_verify');
     const url = window.location.href;
     const uniqueCode = url.substring(url.lastIndexOf('/') + 1);
-    console.log('Ini unique code :', uniqueCode);
+    console.log('Admin :', uniqueCode);
 
     try {
       const response = await ArtichelDbSource.verifyEmailAdmin(uniqueCode);
