@@ -12,6 +12,7 @@ import EditArticle from '../views/pages/admin/edit_article';
 import UserForm from '../views/pages/user/login';
 import RegisterUser from '../views/pages/user/register';
 import VerifyEmail from '../views/pages/user/verifyemail';
+import VerifyEmailAdmin from '../views/pages/admin/verifyemail';
 import ForgotPassword from '../views/pages/forgot_password';
 import ChangePasswordForm from '../views/pages/user/change-password';
 import ChangePasswordAdminForm from '../views/pages/admin/change-password';
@@ -35,7 +36,7 @@ const routes = {
   '/create_article': CreateArticle,
   '/edit_article/:id': EditArticle,
   '/verify_user/:id': VerifyEmail,
-  '/verify_email/:id': VerifyEmail,
+  '/verify_email/:id': VerifyEmailAdmin,
   '/forgot-password': ForgotPassword,
   '/profile_admin': ProfilesAdmin,
   '/profile_user': ProfilesUser,
