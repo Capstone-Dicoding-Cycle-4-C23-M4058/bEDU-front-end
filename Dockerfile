@@ -31,4 +31,4 @@ ENV PORT=443
 EXPOSE 443
 
 # Mengatur perintah yang akan dijalankan ketika kontainer berjalan
-CMD ["http-server", "dist", "-S", "-C", "/etc/nginx/ssl/fullchain.pem", "-K", "/etc/nginx/ssl/privkey.pem"]
+CMD ["http-server", "dist"]
