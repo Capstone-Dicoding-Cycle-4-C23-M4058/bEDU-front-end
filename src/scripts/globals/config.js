@@ -1,5 +1,5 @@
 const CONFIG = {
-  BASE_URL: 'https://web-production-48aa5.up.railway.app/https://capstone.keyzex.com/api/v1/',
+  BASE_URL: 'https://capstone.keyzex.com/api/v1/',
   BASE_URL_SINDO: 'https://api-berita-indonesia.vercel.app/sindonews/',
   DEFAULT_LANGUAGE: 'en-us',
   DATABASE_NAME: 'bedu-database',
