@@ -85,7 +85,7 @@ const createTemplateAdminArticle = data => {
   return `
     <div class="post-box">
       <img src="${data.thumbnail}" alt="${data.title}" class="post-img">
-      <h2 class="category">Pendidikan</h2>
+      <h2 class="category">${data.label}</h2>
       <a href="/#/edit_article/${data.article_id}" class="post-title">
         ${data.title}
       </a>
